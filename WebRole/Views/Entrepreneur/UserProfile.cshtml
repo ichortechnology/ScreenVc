@@ -1,0 +1,54 @@
+﻿@using Screen.Vc.WebRole.Models
+
+@model EntrepreneurProfile
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>General information.</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) 
+{
+    <fieldset>
+        <h3>Personal Information</h3>
+        <ol>
+            <li>
+                @Html.LabelFor(profile => profile.Name)
+                @Html.TextBoxFor(profile => profile.Name)
+                @Html.ValidationMessageFor(profile => profile.Name)
+            </li>
+            <li>
+                @Html.LabelFor(profile => profile.EmailAddress)
+                @Html.TextBoxFor(profile => profile.EmailAddress, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(profile => profile.EmailAddress)
+            </li>
+        </ol>
+        <h3>Contact Information</h3>
+        <ol>
+                @Html.LabelFor(p => p.PrimaryAddress.BlockNumber)
+                @Html.TextBoxFor(p => p.PrimaryAddress.BlockNumber)
+                @Html.LabelFor(p => p.PrimaryAddress.Street)
+                @Html.TextBoxFor(p => p.PrimaryAddress.Street)
+            <li>
+                @Html.LabelFor(p => p.PrimaryAddress.Apt)
+                @Html.TextBoxFor(p => p.PrimaryAddress.Apt)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.PrimaryAddress.City)
+                @Html.TextBoxFor(p => p.PrimaryAddress.City)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.PrimaryAddress.State)
+                @Html.TextBoxFor(p => p.PrimaryAddress.State)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.PrimaryAddress.ZipCode5)
+                @Html.TextBoxFor(p => p.PrimaryAddress.ZipCode5)
+            </li>
+            <li>
+                @Html.LabelFor(p => p.PrimaryAddress.ZipCodeSub4)
+                @Html.TextBoxFor(p => p.PrimaryAddress.ZipCodeSub4)
+            </li>
+        </ol>
+        <input type="submit" value="Update" />
+    </fieldset>
+}

@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Screen.Vc", "Screen.Vc\Screen.Vc.ccproj", "{415740E9-2236-495D-B40A-9DBD2EE25C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.Extensions", "..\ScreenVc.Old\Extensions\Screen.Vc.Extensions.csproj", "{5A841CB0-EB8B-4351-894A-CE1C4A28C9A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.WebRole", "WebRole\Screen.Vc.WebRole.csproj", "{0E06171A-47E0-498E-BCE2-1469FDDB495D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A841CB0-EB8B-4351-894A-CE1C4A28C9A7} = {5A841CB0-EB8B-4351-894A-CE1C4A28C9A7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.WebRole.Tests", "WebRole.Tests\Screen.Vc.WebRole.Tests.csproj", "{AE331FC0-1A7C-43CB-8FDC-0FAAA49CD3ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.Utilities", "Utilities\Screen.Vc.Utilities.csproj", "{6416FA90-7D6C-4A64-BDF6-09ACBE1A765D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Screen.Vc.Database", "Screen.Vc.Database\Screen.Vc.Database.sqlproj", "{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.Model", "Model\Screen.Vc.Model.csproj", "{B3479D4B-99C3-4F2D-A328-9A6727FE7168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.DataAccess", "DataAccess\Screen.Vc.DataAccess.csproj", "{C7713AF0-A2DF-453F-9B5B-352DB0C7C469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.UnitTests", "UnitTests\Screen.Vc.UnitTests.csproj", "{562590F0-8564-4EB5-8DD8-FD2EF39266A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.Interfaces", "Interfaces\Screen.Vc.Interfaces.csproj", "{6613ED32-1250-42C0-AEDC-77C68CE28535}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{415740E9-2236-495D-B40A-9DBD2EE25C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415740E9-2236-495D-B40A-9DBD2EE25C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415740E9-2236-495D-B40A-9DBD2EE25C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415740E9-2236-495D-B40A-9DBD2EE25C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A841CB0-EB8B-4351-894A-CE1C4A28C9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A841CB0-EB8B-4351-894A-CE1C4A28C9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A841CB0-EB8B-4351-894A-CE1C4A28C9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A841CB0-EB8B-4351-894A-CE1C4A28C9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E06171A-47E0-498E-BCE2-1469FDDB495D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E06171A-47E0-498E-BCE2-1469FDDB495D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E06171A-47E0-498E-BCE2-1469FDDB495D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E06171A-47E0-498E-BCE2-1469FDDB495D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE331FC0-1A7C-43CB-8FDC-0FAAA49CD3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE331FC0-1A7C-43CB-8FDC-0FAAA49CD3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE331FC0-1A7C-43CB-8FDC-0FAAA49CD3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE331FC0-1A7C-43CB-8FDC-0FAAA49CD3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6416FA90-7D6C-4A64-BDF6-09ACBE1A765D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6416FA90-7D6C-4A64-BDF6-09ACBE1A765D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6416FA90-7D6C-4A64-BDF6-09ACBE1A765D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6416FA90-7D6C-4A64-BDF6-09ACBE1A765D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66558B2D-A7B4-4AF8-8D5D-11F5224FA642}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B3479D4B-99C3-4F2D-A328-9A6727FE7168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3479D4B-99C3-4F2D-A328-9A6727FE7168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3479D4B-99C3-4F2D-A328-9A6727FE7168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3479D4B-99C3-4F2D-A328-9A6727FE7168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7713AF0-A2DF-453F-9B5B-352DB0C7C469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7713AF0-A2DF-453F-9B5B-352DB0C7C469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7713AF0-A2DF-453F-9B5B-352DB0C7C469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7713AF0-A2DF-453F-9B5B-352DB0C7C469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562590F0-8564-4EB5-8DD8-FD2EF39266A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562590F0-8564-4EB5-8DD8-FD2EF39266A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562590F0-8564-4EB5-8DD8-FD2EF39266A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562590F0-8564-4EB5-8DD8-FD2EF39266A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6613ED32-1250-42C0-AEDC-77C68CE28535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6613ED32-1250-42C0-AEDC-77C68CE28535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6613ED32-1250-42C0-AEDC-77C68CE28535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6613ED32-1250-42C0-AEDC-77C68CE28535}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

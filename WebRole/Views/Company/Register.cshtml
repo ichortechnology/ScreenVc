@@ -1,0 +1,9 @@
+﻿@using Screen.Vc.WebRole.Source
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Entrepreneur/_Layout.cshtml";
+}
+
+<h3>You have no companies registered under this account. Would you like @Html.ActionLink("register", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</h3>
+<!-- TODO: Make this actionLink into an ajax registration if possible -->

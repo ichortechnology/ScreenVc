@@ -1,0 +1,27 @@
+﻿@using Screen.Vc.Extensions
+@using Screen.Vc.WebRole.Models
+@model Company
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Entrepreneur/Layout.cshtml";
+}
+
+<div id="companies">
+    <h2> @Model.Name</h2>
+        
+    <br />
+    @Html.Image(@Model.LogoUrl, @Model.Name + " Logo", "24")
+    <br />
+    <b>@Model.TagLine</b>
+    <br />
+    <iframe width="240" height="320" src="http://www.youtube.com/embed/drGMuf69iW8?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+<!--    @Html.Video(@Model.Pitch30SecondsUrl, "240", "320") -->
+    <br />
+    <h2>Executive Summary</h2>
+    @Model.ExecutiveSummary
+    <br />
+    <h2>FAQ</h2>
+    @Model.Faq
+    <br />
+</div>

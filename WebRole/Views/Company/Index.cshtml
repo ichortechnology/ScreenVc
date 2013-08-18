@@ -1,0 +1,19 @@
+﻿@using Screen.Vc.Extensions
+@using System.Collections.Generic
+@using Screen.Vc.WebRole.Models
+@model List<Company>
+
+@{
+    Layout = "~/Views/Entrepreneur/_Layout.cshtml";
+    ViewBag.Title = "Company List";
+}
+
+<h2>Companies you registered</h2>
+@for (var index = 0; index < Model.Count; ++index)
+{
+    <div class="companyInformation">
+        @Html.Image(Model[index].LogoUrl, @Model[index].Name + " Logo", "24")
+        @Html.ActionLink(@Model[index].Name, "Company")
+    </div>
+    <p />
+}
