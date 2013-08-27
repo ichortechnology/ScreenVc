@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5f6a8fbd-0e98-4f64-9bbf-53e7e2901474"
+  name="AngelList" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="32ad650d-dd9b-42f2-8d31-c38fdddb8458"
+        name="GetStartupsBatchAngelListQuery"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="43097d5f-f135-486b-9155-7a05f0003be5">
+            <interfaceMoniker
+              Id="f8fa3031-2995-4118-89aa-54e03170efef"
+              LastKnownName="IAngelListQuery"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="41cee59d-7d8a-4ae0-8ac8-2519f0fab3b6">
+            <interfaceMoniker
+              Id="3dee6d31-5f8d-4e1d-8f1b-4f721ed23272"
+              LastKnownName="IAngelListClient"
+              LastKnownLocation="Package_1909.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="9c0ca778-790c-47a5-ad6b-7283e79eff95"
+            name="IAngelListClient"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="9d0568be-e284-46b9-b0c2-2b59857868da"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="34167899-1332-41e2-9dea-f3123608e0ff"
+        name="GetUsersBatchAngelListQuery"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="6dc20a28-8b74-4acf-a8c1-e0ecd1be60c0">
+            <interfaceMoniker
+              Id="f8fa3031-2995-4118-89aa-54e03170efef"
+              LastKnownName="IAngelListQuery"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="ec15b1c0-a343-4418-a51f-7a7ffc811dc2">
+            <interfaceMoniker
+              Id="3dee6d31-5f8d-4e1d-8f1b-4f721ed23272"
+              LastKnownName="IAngelListClient"
+              LastKnownLocation="Package_1909.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="4ef539cc-55e2-4400-bfa8-2afeec0702d5"
+            name="IAngelListClient"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c8abdc15-c842-42f4-a411-8b8c5860167a"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6cc9dfc9-9cd3-49e8-a33f-68c988fc880c"
+        name="GetUsersRolesAngelListQuery"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b946979f-2ef4-44b2-b544-203107195b02">
+            <interfaceMoniker
+              Id="f8fa3031-2995-4118-89aa-54e03170efef"
+              LastKnownName="IAngelListQuery"
+              LastKnownLocation="Package_1909.uml" />
+          </interfaceRealization>
+          <dependency
+            Id="72ccd2a7-f0fc-4884-836a-609f612e58f5">
+            <interfaceMoniker
+              Id="3dee6d31-5f8d-4e1d-8f1b-4f721ed23272"
+              LastKnownName="IAngelListClient"
+              LastKnownLocation="Package_1909.uml" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="c8b4fd8e-ec30-4c53-b437-397fccedb7af"
+            name="IAngelListClient"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="b0f0979f-597c-424e-acf0-caf229f6a401"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="f8fa3031-2995-4118-89aa-54e03170efef"
+        name="IAngelListQuery"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="eeb07ba5-8e15-4679-85cf-c7ad47595ba1"
+            name="IAngelListClient"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="f8cefabe-c342-4cea-8627-bd5e3542398e"
+            name="Execute"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="3dee6d31-5f8d-4e1d-8f1b-4f721ed23272"
+        name="IAngelListClient"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="44afb61c-350c-4c7a-8b0b-6183d8e86d1b"
+            name="UsersBatch"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4663c923-050d-4f0b-8990-e17e3c8f6256"
+                  name="List&lt;Int64&gt; ids"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0af8c903-021b-48fe-bc7b-3196ec413ab9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cb892e84-0d2d-4e00-809d-176a70c543dc"
+                      LastKnownName="List&lt;User&gt;"
+                      LastKnownLocation="LoadInvestorIndustries.Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1a8f525d-feff-4866-baa4-7a8585540174"
+            name="StartupsBatch"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2fbd7977-afdd-477a-931d-ebe65b2bc690"
+                  name="List&lt;Int64&gt; ids"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="95eb7f51-7b51-4b66-95c8-4b93cd7911e7"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="e7b7daf7-787d-4ac9-8564-4764e0f5ee44"
+                      LastKnownName="List&lt;Startup&gt;"
+                      LastKnownLocation="LoadInvestorIndustries.Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="449bb9c6-176f-48b0-aa7c-271668308fcb"
+            name="UsersRoles"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d102b001-b505-42ba-bfa1-76d653f29a6e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c112949d-2e5e-45a7-8ce1-ae21dc264f92"
+                      LastKnownName="UsersRolesResponse"
+                      LastKnownLocation="LoadInvestorIndustries.Model.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="544aac16-30ed-4149-89af-550ee05bfa12"
+                  name="Int64 userId"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

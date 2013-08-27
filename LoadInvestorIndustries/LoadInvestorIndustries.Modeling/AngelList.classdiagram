@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="bf24bd64-1aae-4535-9f1c-99b4ca9fb135" name="UMLClassDiagram1" linkedPackageId="057c2f16-2544-4176-9320-75b96392b044" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <referencedType Id="098bbf1b-7fed-44ac-90aa-2c86c59d5038" name="List&lt;User&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;User&gt;">
+        <elementDefinition Id="cb892e84-0d2d-4e00-809d-176a70c543dc" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="114eadd6-19c5-4aca-a07a-6aad8fffed1a" name="List&lt;Startup&gt;" isAbstract="false" isLeaf="false" cachedFullName="List&lt;Startup&gt;">
+        <elementDefinition Id="e7b7daf7-787d-4ac9-8564-4764e0f5ee44" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bdf14785-f3c7-4578-8f64-5cae4ed0dfd5" name="UsersRolesResponse" isAbstract="false" isLeaf="false" cachedFullName="UsersRolesResponse">
+        <elementDefinition Id="c112949d-2e5e-45a7-8ce1-ae21dc264f92" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="18dc9fdb-4174-4a06-982a-60ce5861ab96" name="AngelList">
+        <elementDefinition Id="5f6a8fbd-0e98-4f64-9bbf-53e7e2901474" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="7b809e42-e128-4163-a1bb-0f8359fa9dd0" name="GetStartupsBatchAngelListQuery" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="32ad650d-dd9b-42f2-8d31-c38fdddb8458" />
+              <suppliersInternal>
+                <interfaceRealization Id="dbb151d8-7b42-42b2-befe-4cba88ba5b04">
+                  <interfaceMoniker Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" LastKnownName="IAngelListQuery" />
+                  <elementDefinition Id="43097d5f-f135-486b-9155-7a05f0003be5" />
+                </interfaceRealization>
+                <dependency Id="61d06bea-a316-460c-8eca-817742cbbe1d">
+                  <interfaceMoniker Id="872c4cc1-b0a7-404f-b668-77e53977643c" LastKnownName="IAngelListClient" />
+                  <elementDefinition Id="41cee59d-7d8a-4ae0-8ac8-2519f0fab3b6" />
+                </dependency>
+              </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="06e092b7-f429-4ffd-9707-2bd995e9a7b7" name="IAngelListClient" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9c0ca778-790c-47a5-ad6b-7283e79eff95" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="a771227f-f515-4289-830e-8877763759f0" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9d0568be-e284-46b9-b0c2-2b59857868da" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="e7d9869c-de36-4db7-a573-f3ff4e903df1" name="GetUsersBatchAngelListQuery" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="34167899-1332-41e2-9dea-f3123608e0ff" />
+              <suppliersInternal>
+                <interfaceRealization Id="41b9dc21-81c4-4959-8f3e-5e360c3588e3">
+                  <interfaceMoniker Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" LastKnownName="IAngelListQuery" />
+                  <elementDefinition Id="6dc20a28-8b74-4acf-a8c1-e0ecd1be60c0" />
+                </interfaceRealization>
+                <dependency Id="8b5f8b94-5b9c-46cd-a392-8d7b6abb9be8">
+                  <interfaceMoniker Id="872c4cc1-b0a7-404f-b668-77e53977643c" LastKnownName="IAngelListClient" />
+                  <elementDefinition Id="ec15b1c0-a343-4418-a51f-7a7ffc811dc2" />
+                </dependency>
+              </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="6baef75e-7f9e-441c-a9f5-417205723c3e" name="IAngelListClient" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4ef539cc-55e2-4400-bfa8-2afeec0702d5" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="5e25bf28-0e5f-4f00-9a2b-1b3fca1a95c6" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c8abdc15-c842-42f4-a411-8b8c5860167a" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8bd4242f-47b6-4e61-997d-0911a280a195" name="GetUsersRolesAngelListQuery" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6cc9dfc9-9cd3-49e8-a33f-68c988fc880c" />
+              <suppliersInternal>
+                <interfaceRealization Id="27bbf972-ddb0-4313-8d8f-831bd4e24d30">
+                  <interfaceMoniker Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" LastKnownName="IAngelListQuery" />
+                  <elementDefinition Id="b946979f-2ef4-44b2-b544-203107195b02" />
+                </interfaceRealization>
+                <dependency Id="646b2d52-cc8d-4196-88f6-f662810d91a9">
+                  <interfaceMoniker Id="872c4cc1-b0a7-404f-b668-77e53977643c" LastKnownName="IAngelListClient" />
+                  <elementDefinition Id="72ccd2a7-f0fc-4884-836a-609f612e58f5" />
+                </dependency>
+              </suppliersInternal>
+              <ownedAttributesInternal>
+                <property Id="1da75e28-103b-43f1-a7e7-7718487eb4ec" name="IAngelListClient" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c8b4fd8e-ec30-4c53-b437-397fccedb7af" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="e1b04ac6-46dd-46c4-9fa6-6d860ac3c307" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="b0f0979f-597c-424e-acf0-caf229f6a401" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" name="IAngelListQuery" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="f8fa3031-2995-4118-89aa-54e03170efef" />
+              <ownedAttributes>
+                <property Id="810fc7b4-c7bc-4e91-82b5-f75b77ef34e2" name="IAngelListClient" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="eeb07ba5-8e15-4679-85cf-c7ad47595ba1" />
+                </property>
+              </ownedAttributes>
+              <ownedOperations>
+                <operation Id="f0bddbc0-eb7e-486b-a6da-537e759c9e61" name="Execute" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f8cefabe-c342-4cea-8627-bd5e3542398e" />
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <Interface Id="872c4cc1-b0a7-404f-b668-77e53977643c" name="IAngelListClient" isAbstract="false" isLeaf="false">
+              <elementDefinition Id="3dee6d31-5f8d-4e1d-8f1b-4f721ed23272" />
+              <ownedOperations>
+                <operation Id="71c3738b-9f49-4f5d-b0b5-238a73703ade" name="UsersBatch" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="44afb61c-350c-4c7a-8b0b-6183d8e86d1b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="254120a9-08ef-4bd4-a8e5-545adde1003f" name="List&lt;int&gt; ids" direction="In" isUnique="false">
+                        <elementDefinition Id="4663c923-050d-4f0b-8990-e17e3c8f6256" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="64f8dd24-9c56-4fcf-9c1f-2a4555e80a84" direction="Return">
+                        <elementDefinition Id="0af8c903-021b-48fe-bc7b-3196ec413ab9" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="098bbf1b-7fed-44ac-90aa-2c86c59d5038" LastKnownName="List&lt;User&gt;" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="257a4b5c-57df-4288-9d08-dd1ebfbf74a0" name="StartupsBatch" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1a8f525d-feff-4866-baa4-7a8585540174" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fe5b8727-3acf-447a-bab3-569a78b17a15" name="List&lt;int&gt; ids" direction="In" isUnique="false">
+                        <elementDefinition Id="2fbd7977-afdd-477a-931d-ebe65b2bc690" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8a66968b-98a1-4546-9800-fc19aa730415" direction="Return">
+                        <elementDefinition Id="95eb7f51-7b51-4b66-95c8-4b93cd7911e7" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="114eadd6-19c5-4aca-a07a-6aad8fffed1a" LastKnownName="List&lt;Startup&gt;" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="a52fab43-83f2-4169-ab91-278c8476309c" name="UsersRoles" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="449bb9c6-176f-48b0-aa7c-271668308fcb" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="a0a07473-3eee-4c30-bcd2-14e0a25a4e3c" direction="Return" isUnique="false">
+                        <elementDefinition Id="d102b001-b505-42ba-bfa1-76d653f29a6e" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="bdf14785-f3c7-4578-8f64-5cae4ed0dfd5" LastKnownName="UsersRolesResponse" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d3011336-f3ff-4fa9-91fe-b626524242a3" name="int userId" direction="In" isUnique="false">
+                        <elementDefinition Id="544aac16-30ed-4149-89af-550ee05bfa12" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+              </ownedOperations>
+            </Interface>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="9d25a4ac-89d0-4dd6-9764-bd7bb2c70ed1" name="AngelList.InvestorQueries">
+        <elementDefinition Id="e61d8be0-1be8-498c-aff7-5e4afd11013e" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="c40e3a34-98f3-4013-b7e6-27ac9a5c81f8" name="GetUsersStartupsMarkets" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="4d8f26ce-3caa-444e-adf2-bff59057af3d" />
+              <suppliersInternal>
+                <interfaceRealization Id="28bab24f-dc47-43bf-abed-f7245c52c363">
+                  <interfaceMoniker Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" LastKnownName="IAngelListQuery" />
+                  <elementDefinition Id="a241afb1-eb5e-400d-a861-339e08040366" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="bc8efaef-f2c3-41be-b3f8-228c9fdb9e5d" isDerived="false" sourceEndRoleName="GetUsersStartupsMarkets" targetEndRoleName="GetUserStartupsMarkets" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="c6b3924f-b7a5-419e-9e15-2f403bf2cc5d" LastKnownName="GetUserStartupsMarkets" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="fe59b617-997e-4b26-b04d-1e3679a12425" name="GetUsersStartupsMarkets" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="02acd6a0-b288-4cba-8eee-7ec5c6ea722c" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="051d0ffd-42e7-4b41-b9b6-03cd2360d272" name="GetUserStartupsMarkets" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="947daac4-ee72-4af2-a48a-adb3cb610276" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="fe22b4b0-d4c5-4f8e-a988-31cec41ced4e" />
+                </association>
+              </targetEnds>
+              <ownedOperationsInternal>
+                <operation Id="49543db6-11b1-45f3-9e39-d8ce6fac4b89" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8e767577-20fd-4170-9b97-8f3c8395a3a6" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="c6b3924f-b7a5-419e-9e15-2f403bf2cc5d" name="GetUserStartupsMarkets" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="15648713-2f62-43d7-9845-598bc0126ab9" />
+              <suppliersInternal>
+                <interfaceRealization Id="41fc311e-7cc1-41c5-bd9a-bcd996ea0db3">
+                  <interfaceMoniker Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" LastKnownName="IAngelListQuery" />
+                  <elementDefinition Id="dbd0f69e-0781-4e82-9f90-67c5f1403cee" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="06e898e4-cf9b-4cf7-8a13-87052a5b5ebc" isDerived="false" sourceEndRoleName="GetUserStartupsMarkets" targetEndRoleName="GetStartupsBatchAngelListQuery" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="7b809e42-e128-4163-a1bb-0f8359fa9dd0" LastKnownName="GetStartupsBatchAngelListQuery" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="b90b200c-a8c4-412a-abe1-688037971746" name="GetUserStartupsMarkets" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="ef57158e-97b9-44aa-be1a-fd5f97fc77cc" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="ab504a56-82a3-4baf-9a87-d956656f512a" name="GetStartupsBatchAngelListQuery" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="a18ae5f5-8f53-4942-b4a5-54b82e9e3610" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="e4b02ac0-54ef-4da3-8ccf-67093ae1d389" />
+                </association>
+              </targetEnds>
+              <ownedOperationsInternal>
+                <operation Id="a48daae6-9580-4ca5-95a3-e18758706cb9" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="937fe3cb-f660-4a78-a8a8-b3ccc8a1fc8e" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="bcafbae5-a1f6-4572-a310-1f8eab941c79" name="GetInvestors" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="e40233b6-1ebe-43cb-9851-ed482d890668" />
+              <suppliersInternal>
+                <interfaceRealization Id="7b941599-621f-4afa-b5fe-3ae97f8dabe3">
+                  <interfaceMoniker Id="10fac5c6-75a2-4bea-bfb9-3c242ad67166" LastKnownName="IAngelListQuery" />
+                  <elementDefinition Id="7f503775-0f09-446e-a2a7-2960f7eb4eb4" />
+                </interfaceRealization>
+              </suppliersInternal>
+              <targetEnds>
+                <association Id="bb08a5ac-6c30-44c3-9920-2aad2093ff9e" isDerived="false" sourceEndRoleName="GetInvestors" targetEndRoleName="GetUsersBatchAngelListQuery" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="e7d9869c-de36-4db7-a573-f3ff4e903df1" LastKnownName="GetUsersBatchAngelListQuery" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="0731fd8c-44b5-4f7e-97f2-a4d0aec3fb16" name="GetInvestors" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="af59ebb7-d4b2-446e-ab94-4d5a30956a3b" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="2369dd94-c825-4a6e-aa5e-1c7436e2f030" name="GetUsersBatchAngelListQuery" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                        <elementDefinition Id="efd03255-3e01-48a9-82e4-203a0d58564c" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="da01017c-4c77-4716-9c48-aafc286c4f15" />
+                </association>
+              </targetEnds>
+              <ownedOperationsInternal>
+                <operation Id="a0f8d4f6-5c5e-485a-94da-866f53a4c021" name="Execute" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="cbf548ca-1ed1-4c71-a732-165c45e1b9ea" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="057c2f16-2544-4176-9320-75b96392b044" name="LoadInvestorIndustries.Model">
+    <elementDefinition Id="2487e033-fbed-4553-9275-4b34af5a4bb6" />
+    <profileInstances>
+      <packageHasProfileInstances Id="ef071e4d-39b1-46ee-8d47-732ba5508944">
+        <profileInstance Id="b1fefc48-b36f-489c-80f4-75d47d586e8f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d712211c-2d63-40c0-ba7b-1d18d829539a">
+        <profileInstance Id="88771524-6b46-410a-91c6-04268c3ff476" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
