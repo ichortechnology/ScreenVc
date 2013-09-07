@@ -43,8 +43,8 @@ namespace LoadInvestorIndustries
                 }
                 defaultLogWriter.Write(string.Format("start: {0}, end: {1}", start, end));
 
-                // TODO,, use factory or DI to get AngelListClient implementations?
-                // TODO,, use configuration for base address?
+                // TODO, 3, LoadInvestorIndustries: Use DI to get AngelListClient implementation, logger, etc.?
+                // TODO, issue #1, LoadInvestorIndustries: Read service base address from configuration.
                 string baseAddress = "http://api.angel.co/1";
                 IRestClient restClient = new SimpleRestClient();
                 IAngelListClient angelListClient = new JsonNetAngelListClient(baseAddress, restClient);
@@ -71,7 +71,7 @@ namespace LoadInvestorIndustries
 
             Console.WriteLine();
             Console.WriteLine("LoadInvestorIndustries completed.");
-            // TODO,, only do this when running in the debugger?
+            // TODO, 2, LoadInvestorIndustries: Read service base address from configuration
             Console.ReadLine();
         }
     }
