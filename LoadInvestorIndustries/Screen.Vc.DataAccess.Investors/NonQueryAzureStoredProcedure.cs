@@ -46,7 +46,6 @@ namespace Screen.Vc.DataAccess.Investors
 
                     if (!asyncResult.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(m_sqlTimeoutInSeconds)))
                     {
-                        // TODO: Log error message and raise event somehow.
                         throw new TimeoutException(String.Format("Timeout occured while waiting for {0} stored procedure", GetStoredProcedureName()));
                     }
                     int rowsAffected = sqlCommand.EndExecuteNonQuery(asyncResult);

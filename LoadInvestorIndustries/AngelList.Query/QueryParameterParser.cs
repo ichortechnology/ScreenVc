@@ -47,8 +47,6 @@ namespace AngelList.Query
 
         public List<List<int>> ParseIntRange(int start, int end)
         {
-            // TODO,, Check start and end parameter for negative ints, etc. 
-
             int numberOfRanges = (end - start) / maxRangeLength + 1;
 
             if (numberOfRanges < 1)

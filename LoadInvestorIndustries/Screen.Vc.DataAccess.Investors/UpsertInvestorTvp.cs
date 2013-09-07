@@ -39,7 +39,7 @@ namespace Screen.Vc.DataAccess.Investors
             // Every row in the DataTable should be either updated or inserted.
             if (rowsAffected != InvestorDataTable.Rows.Count)
             {
-                // TODO,, Log.
+                // TODO, 6, Screen.Vc.DataAccess.Investors: Log warning when non-query return value is not the expected value.
             }
         }
     }

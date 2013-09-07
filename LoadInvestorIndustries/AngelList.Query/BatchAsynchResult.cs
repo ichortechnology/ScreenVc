@@ -60,7 +60,7 @@ namespace AngelList.Query
             get { return isCompleted; }
         }
 
-        // TODO,, How to do this automatically at the end of the executing method, as AsyncResult does.
+        // TODO, 5, AngelList.Query: Figure out how to do call BatchAsynchResult.SignalCompleted() automatically at the end of the executing method, as AsyncResult does.
         public void SignalCompleted()
         {
             completedEvent.Set();
