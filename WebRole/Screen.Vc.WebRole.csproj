@@ -391,6 +391,9 @@
     <Content Include="Views\Company\Register.cshtml" />
     <Content Include="Views\Company\Edit.cshtml" />
     <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Entrepreneur\_NoCompany.cshtml" />
+    <Content Include="Views\Entrepreneur\_CompanyDetails.cshtml" />
+    <Content Include="Views\Entrepreneur\RegisterCompany.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -399,13 +402,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ScreenVc.Old\Extensions\Screen.Vc.Extensions.csproj">
-      <Project>{5a841cb0-eb8b-4351-894a-ce1c4a28c9a7}</Project>
-      <Name>Screen.Vc.Extensions</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataAccess\Screen.Vc.DataAccess.csproj">
       <Project>{c7713af0-a2df-453f-9b5b-352db0c7c469}</Project>
       <Name>Screen.Vc.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Extensions\Screen.Vc.Extensions.csproj">
+      <Project>{5a841cb0-eb8b-4351-894a-ce1c4a28c9a7}</Project>
+      <Name>Screen.Vc.Extensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Screen.Vc.Interfaces.csproj">
       <Project>{6613ed32-1250-42c0-aedc-77c68ce28535}</Project>

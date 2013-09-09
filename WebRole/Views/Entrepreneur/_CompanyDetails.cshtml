@@ -1,0 +1,9 @@
+﻿@using Screen.Vc.WebRole.Models;
+@model EntrepreneurHomePage
+
+@Html.LabelFor(m => m.CompanySummary.Name)
+<img src="@Model.CompanySummary.LogoUrl" alt="Logo is not displayed!" />
+@Html.LabelFor(m => m.CompanySummary.PossibleInvestorCount)
+@Html.LabelFor(m => m.CompanySummary.QuestionCount)
+@Html.LabelFor(m => m.CompanySummary.RequestCount)
+@Html.LabelFor(m => m.CompanySummary.ViewCount)

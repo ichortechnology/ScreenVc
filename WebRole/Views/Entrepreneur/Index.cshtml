@@ -1,10 +1,20 @@
-﻿<!-- 
-    //@using Screen.Vc.WebRole.Models
-    @model EntrepreneurHomePage
--->
+﻿@using Screen.Vc.WebRole.Models
+@model EntrepreneurHomePage
 
 @{
     Layout = "~/Views/Entrepreneur/_Layout.cshtml";
     ViewBag.Title = "Entrepreneur Home";
 }
 
+@if (Model == null)
+{
+    // Display blank page.
+}
+else if (Model.CompanySummary == null)
+{
+    @Html.Partial("~/Views/Entrepreneur/_NoCompany.cshtml");
+}
+else
+{
+    @Html.Partial("~/Views/Entrepreneur/_CompanyDetails.cshtml", Model);
+}

@@ -77,5 +77,10 @@ namespace Screen.Vc.WebRole.Models
         public List<CompanySummary>    Companies { get; set; }
     }
 
+    public class RegisterCompanyPage
+    {
+        //public 
+    }
+
     #endregion ViewModels
 }

@@ -95,10 +95,11 @@ namespace Screen.Vc.WebRole.Controllers
                 }
             }
 
-            WebViewPage viewPage = (WebViewPage) BuildManager.CreateInstanceFromVirtualPath("~/Views/Entrepreneur/EntrepreneurRegister.cshtml", typeof(WebViewPage));
+            //WebViewPage viewPage = (WebViewPage) BuildManager.CreateInstanceFromVirtualPath("~/Views/Account/EntrepreneurRegister.cshtml", typeof(WebViewPage));
             
             // If we got this far, something failed, redisplay form
-            return View("~/Views/Entrepreneur/EntrepreneurRegister.cshtml", model);
+            //return View("~/Views/Account/EntrepreneurRegister.cshtml", model);
+            return View(model);
         }
 
 
