@@ -28,7 +28,8 @@ namespace Screen.Vc.WebRole.Controllers
         public ActionResult Index()
         {
             EntrepreneurHomePage    model = null;
-            
+            ActionResult            view;
+
             if (WebSecurity.IsAuthenticated)
             {
                 m_fetchHomePageData.EntrepreneurId = WebSecurity.CurrentUserId;
@@ -36,8 +37,29 @@ namespace Screen.Vc.WebRole.Controllers
                 
                 model = new EntrepreneurHomePage();
                 model = EntrepreneurAdapters.Convert(m_fetchHomePageData);
+                view = View(model);
+            }
+            else
+            {
+                view = View("IndexWithNoCompanies");
             }
             return View(model);
+        }
+
+        //
+        // Get: /Entrepreneut/RegisterCompany
+        public ActionResult RegisterCompany()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegisterCompany(RegisterCompanyPage model)
+        {
+            // TODO: Decide on what the model looks like.
+            // TODO: Handle registration success and error differently.
+            return View();
         }
 
         //

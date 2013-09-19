@@ -29,6 +29,7 @@ namespace Screen.Vc.WebRole.Source
     public class EntrepreneurActions
     {
         public const string NoCompanies = "NoCompanies";
+        public const string RegisterCompany = "RegisterCompany";
     }
 
     public class CompanyActions
