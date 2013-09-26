@@ -10,11 +10,9 @@ using System.Threading.Tasks;
 
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 
+using AngelList.Interfaces;
 using AngelList.Query;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
 
 namespace AngelList.Query.Investor
 {

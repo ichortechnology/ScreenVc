@@ -12,9 +12,8 @@ using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.Practices.Unity;
 
-using AngelList;
+using AngelList.Interfaces;
 using AngelList.Query;
-using AngelList.Wcf;
 using AngelList.JsonNet;
 using AngelList.JsonTypes;
 using RestClient;
@@ -22,6 +21,9 @@ using Screen.Vc.DataAccess.Investors;
 
 namespace LoadInvestorIndustries.Test
 {
+    /// <summary>
+    /// Tests for the full LoadInvestorIndustries functionality.
+    /// </summary>
     [TestClass]
     public class InvestorIndustriesLoaderUnitTest
     {
@@ -35,8 +37,6 @@ namespace LoadInvestorIndustries.Test
         public static void InitializeClass(TestContext context)
         {
             BaseAddress = "http://api.angel.co/1";
-
-            //AngelListClient = new WcfAngelListClient();
 
             IRestClient restClient = new SimpleRestClient();
             AngelListClient = new JsonNetAngelListClient(BaseAddress, restClient);
@@ -67,9 +67,9 @@ namespace LoadInvestorIndustries.Test
 
             sqlCommonTasks.GetTableCounts(out investorCount, out industryCount, out investorIndustryCount);
 
-            Assert.AreEqual(2, investorCount);
-            Assert.AreEqual(149, industryCount);
-            Assert.AreEqual(168, investorIndustryCount);
+            Assert.AreNotEqual(0, investorCount);
+            Assert.AreNotEqual(0, industryCount);
+            Assert.AreNotEqual(0, investorIndustryCount);
         }
 
         [TestMethod]
@@ -90,9 +90,9 @@ namespace LoadInvestorIndustries.Test
 
             sqlCommonTasks.GetTableCounts(out investorCount, out industryCount, out investorIndustryCount);
 
-            Assert.AreEqual(1, investorCount);
-            Assert.AreEqual(12, industryCount);
-            Assert.AreEqual(12, investorIndustryCount);
+            Assert.AreNotEqual(0, investorCount);
+            Assert.AreNotEqual(0, industryCount);
+            Assert.AreNotEqual(0, investorIndustryCount);
         }
 
         [TestMethod]
@@ -112,8 +112,9 @@ namespace LoadInvestorIndustries.Test
 
             sqlCommonTasks.GetTableCounts(out investorCount, out industryCount, out investorIndustryCount);
 
-            Assert.AreEqual(1, investorCount);
-            Assert.AreEqual(140, industryCount);
+            Assert.AreNotEqual(0, investorCount);
+            Assert.AreNotEqual(0, industryCount);
+            Assert.AreNotEqual(0, investorIndustryCount);
             Assert.AreEqual(industryCount, investorIndustryCount);
         }
 
@@ -134,9 +135,9 @@ namespace LoadInvestorIndustries.Test
 
             sqlCommonTasks.GetTableCounts(out investorCount, out industryCount, out investorIndustryCount);
 
-            Assert.AreEqual(1, investorCount);
-            Assert.AreEqual(140, industryCount);
-            Assert.AreEqual(industryCount, investorIndustryCount);
+            Assert.AreNotEqual(0, investorCount);
+            Assert.AreNotEqual(0, industryCount);
+            Assert.AreNotEqual(0, investorIndustryCount);
         }
 
         [TestMethod]
@@ -156,9 +157,9 @@ namespace LoadInvestorIndustries.Test
 
             sqlCommonTasks.GetTableCounts(out investorCount, out industryCount, out investorIndustryCount);
 
-            Assert.AreEqual(126, investorCount);
-            Assert.AreEqual(472, industryCount);
-            Assert.AreEqual(3371, investorIndustryCount);
+            Assert.AreNotEqual(0, investorCount);
+            Assert.AreNotEqual(0, industryCount);
+            Assert.AreNotEqual(0, investorIndustryCount);
         }
 
         /// <summary>

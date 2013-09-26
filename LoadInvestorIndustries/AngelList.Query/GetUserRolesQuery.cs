@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 
+using AngelList.Interfaces;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
 
 namespace AngelList.Query
 {
@@ -31,7 +29,7 @@ namespace AngelList.Query
 
             do
             {
-                UsersRolesResponse response = AngelListClient.UsersRoles(Id, page);
+                UserRoles response = AngelListClient.UserRoles(Id, page);
 
                 if (response.StartupRoles == null)
                 {

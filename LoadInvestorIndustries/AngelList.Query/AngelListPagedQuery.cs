@@ -7,6 +7,7 @@ using System.Threading;
 using System.Runtime.Remoting.Messaging;
 
 using Microsoft.Practices.EnterpriseLibrary.Logging;
+using AngelList.Interfaces;
 
 namespace AngelList.Query
 {

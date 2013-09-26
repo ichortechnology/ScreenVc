@@ -5,11 +5,8 @@ using System.Text;
 
 using Newtonsoft.Json;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
 
-namespace AngelList
+namespace AngelList.Interfaces
 {
     /// <summary>
     /// Interface implemented by classes that call the AngelList REST API.
@@ -22,17 +19,11 @@ namespace AngelList
         int QueryIdResultsLimit { get; }
         int QueryActivityFeedResultsLimit { get; }
 
-        User Users(int id);
-
-        UserDetails UserDetails(int id, UsersIncludeDetails detailsToInclude);
-
         List<User> UsersBatch(IEnumerable<int> ids);
 
-        UsersRolesResponse UsersRoles(int userId);
+        UserRoles UserRoles(int userId);
 
-        UsersRolesResponse UsersRoles(int userId, int page);
-
-        AngelList.JsonTypes.Startup Startups(int id);
+        UserRoles UserRoles(int userId, int page);
 
         List<AngelList.JsonTypes.Startup> StartupsBatch(IEnumerable<int> ids);
     }

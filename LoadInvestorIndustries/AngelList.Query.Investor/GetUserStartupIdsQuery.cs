@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+using AngelList.Interfaces;
 using AngelList.Query;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
 
 namespace AngelList.Query.Investor
 {
@@ -35,7 +33,7 @@ namespace AngelList.Query.Investor
 
             do
             {
-                UsersRolesResponse response = AngelListClient.UsersRoles(Id, page);
+                UserRoles response = AngelListClient.UserRoles(Id, page);
 
                 if (response.StartupRoles == null)
                 {

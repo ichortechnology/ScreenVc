@@ -7,10 +7,6 @@ using System.Data;
 using System.Data.SqlClient;
 
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
-
 using Screen.Vc.DataAccess.Investors;
 
 namespace LoadInvestorIndustries.Model

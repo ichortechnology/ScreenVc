@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AngelList
+namespace AngelList.Interfaces
 {
     /// <summary>
     /// Interface implemented by classes that represent an asynchronous call to the AngelList API and that return paged results in a callback.

@@ -11,8 +11,7 @@ using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.Practices.Unity;
 
-using AngelList;
-using AngelList.Wcf;
+using AngelList.Interfaces;
 using AngelList.JsonNet;
 using RestClient;
 
@@ -48,9 +47,7 @@ namespace LoadInvestorIndustries
                 string baseAddress = "http://api.angel.co/1";
                 IRestClient restClient = new SimpleRestClient();
                 IAngelListClient angelListClient = new JsonNetAngelListClient(baseAddress, restClient);
-                
-                //IAngelListClient angelListClient = new WcfAngelListClient();
-                
+                                
                 defaultLogWriter.Write(string.Format("Using AngelListClient {0}.", angelListClient.GetType()));
 
                 loader = new InvestorIndustriesLoader(angelListClient, defaultLogWriter);

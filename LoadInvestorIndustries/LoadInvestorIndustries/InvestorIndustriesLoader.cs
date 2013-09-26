@@ -11,14 +11,10 @@ using System.Threading;
 
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 
-using AngelList;
+using AngelList.Interfaces;
 using AngelList.Query;
 using AngelList.Query.Investor;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
-
 using Screen.Vc.DataAccess.Investors;
 using LoadInvestorIndustries.Model;
 

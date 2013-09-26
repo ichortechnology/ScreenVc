@@ -7,10 +7,6 @@ using System.Data;
 using System.Data.SqlClient;
 
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
-
 using Screen.Vc.DataAccess.Investors;
 
 namespace LoadInvestorIndustries.Model
@@ -39,6 +35,7 @@ namespace LoadInvestorIndustries.Model
             investorTvpDataTable.Columns.Add(baseTable.NameColumn.ColumnName, baseTable.NameColumn.DataType);
             investorTvpDataTable.Columns.Add(baseTable.OnlineBioUrlColumn.ColumnName, baseTable.OnlineBioUrlColumn.DataType);
             investorTvpDataTable.Columns.Add(baseTable.LinkedInUrlColumn.ColumnName, baseTable.LinkedInUrlColumn.DataType);
+            investorTvpDataTable.Columns.Add(baseTable.UpdatedColumn.ColumnName, baseTable.UpdatedColumn.DataType);
 
             foreach (User user in investors)
             {

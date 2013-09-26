@@ -118,17 +118,5 @@ namespace LoadInvestorIndustries.Test
                 upsertInvestor.Execute();
             }
         }
-
-        [TestMethod]
-        public void UpsertInvestorIndustry_Success()
-        {
-            Assert.Fail("Not implemented.");
-        }
-
-        [TestMethod]
-        public void UpsertIndustry_Success()
-        {
-            Assert.Fail("Not implemented.");
-        }
     }
 }

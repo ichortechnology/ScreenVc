@@ -10,14 +10,10 @@ using Microsoft.Practices.EnterpriseLibrary.Common.Configuration.Unity;
 using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.Practices.Unity;
 
-using AngelList;
+using AngelList.Interfaces;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
 using AngelList.Query;
 using AngelList.Query.Investor;
-using AngelList.Wcf;
 using AngelList.JsonNet;
 using RestClient;
 
@@ -36,8 +32,6 @@ namespace LoadInvestorIndustries.Test
         public static void InitializeClass(TestContext context)
         {
             defaultLogWriter = EnterpriseLibraryContainer.Current.GetInstance<LogWriter>();
-
-            //AngelListClient = new WcfAngelListClient();
 
             BaseAddress = "http://api.angel.co/1";
             IRestClient restClient = new SimpleRestClient();
@@ -93,12 +87,6 @@ namespace LoadInvestorIndustries.Test
             Assert.IsNotNull(investors);
             Assert.AreNotEqual(0, investors.Where<User>(u => u.Id == startId).Count<User>());
             Assert.AreEqual(0, investors.Where<User>(u => u.Id == endId).Count<User>());
-        }
-
-        [TestMethod]
-        public void GetInvestorsQuery_Paged_AllIdsFound_Success()
-        {
-            Assert.Fail("Not Implemented");
         }
 
         [TestMethod]

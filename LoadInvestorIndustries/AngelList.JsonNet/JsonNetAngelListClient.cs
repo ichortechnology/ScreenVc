@@ -5,10 +5,8 @@ using System.Linq;
 using System.Text;
 
 using Newtonsoft.Json;
+using AngelList.Interfaces;
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
 using RestClient;
 
 namespace AngelList.JsonNet
@@ -52,16 +50,6 @@ namespace AngelList.JsonNet
             get { return 25; }
         }
 
-        User IAngelListClient.Users(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        UserDetails IAngelListClient.UserDetails(int id, UsersIncludeDetails detailsToInclude)
-        {
-            throw new NotImplementedException();
-        }
-
         List<User> IAngelListClient.UsersBatch(IEnumerable<int> ids)
         {
             if (ids == null)
@@ -94,34 +82,19 @@ namespace AngelList.JsonNet
             return users;
         }
 
-        UsersRolesResponse IAngelListClient.UsersRoles(int userId)
+        UserRoles IAngelListClient.UserRoles(int userId)
         {
-            Uri uri = new Uri(string.Format("{0}/users/{1}/roles", BaseAddress, userId));
-
-            UsersRolesResponse response = new UsersRolesResponse();
-            try
-            {
-                response = JsonConvert.DeserializeObject<UsersRolesResponse>(RestClient.Get(uri));
-            }
-            catch (RestClientException ex)
-            {
-                throw new AngelListClientException("An exception occurred when calling the service. See inner exception.", ex);
-            }
-            catch (JsonException ex)
-            {
-                throw new AngelListClientException("An exception occurred when calling the service. See inner exception.", ex);
-            }
-            return response;
+            return ((IAngelListClient)this).UserRoles(userId, 1);
         }
 
-        UsersRolesResponse IAngelListClient.UsersRoles(int userId, int page)
+        UserRoles IAngelListClient.UserRoles(int userId, int page)
         {
             Uri uri = new Uri(string.Format("{0}/users/{1}/roles?page={2}", BaseAddress, userId, page));
 
-            UsersRolesResponse response = new UsersRolesResponse();
+            UserRoles response = new UserRoles();
             try
             {
-                response = JsonConvert.DeserializeObject<UsersRolesResponse>(RestClient.Get(uri));
+                response = JsonConvert.DeserializeObject<UserRoles>(RestClient.Get(uri));
             }
             catch (RestClientException ex)
             {
@@ -132,11 +105,6 @@ namespace AngelList.JsonNet
                 throw new AngelListClientException("An exception occurred when calling the service. See inner exception.", ex);
             }
             return response;
-        }
-
-        JsonTypes.Startup IAngelListClient.Startups(int id)
-        {
-            throw new NotImplementedException();
         }
 
         List<JsonTypes.Startup> IAngelListClient.StartupsBatch(IEnumerable<int> ids)

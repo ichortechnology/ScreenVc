@@ -7,10 +7,6 @@ using System.Data;
 using System.Data.SqlClient;
 
 using AngelList.JsonTypes;
-using AngelList.JsonTypes.UserJsonTypes;
-using AngelList.JsonTypes.UserRoleJsonTypes;
-using AngelList.JsonTypes.StartupJsonTypes;
-
 using Screen.Vc.DataAccess.Investors;
 
 namespace LoadInvestorIndustries.Model
@@ -39,6 +35,7 @@ namespace LoadInvestorIndustries.Model
             TvpDataTable.Columns.Add(baseTable.ExternalIdColumn.ColumnName, baseTable.ExternalIdColumn.DataType);
             TvpDataTable.Columns.Add(baseTable.NameColumn.ColumnName, baseTable.NameColumn.DataType);
             TvpDataTable.Columns.Add(baseTable.DisplayNameColumn.ColumnName, baseTable.DisplayNameColumn.DataType);
+            TvpDataTable.Columns.Add(baseTable.UpdatedColumn.ColumnName, baseTable.UpdatedColumn.DataType);
 
             foreach (Market market in markets)
             {

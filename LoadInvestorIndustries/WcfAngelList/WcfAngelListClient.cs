@@ -6,6 +6,7 @@ using System.Text;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 
+using AngelList.Interfaces;
 using Newtonsoft.Json;
 using AngelList.JsonTypes;
 using AngelList.JsonTypes.UserJsonTypes;
@@ -39,16 +40,6 @@ namespace AngelList.Wcf
             get { return 25; }
         }
 
-        public User Users(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public UserDetails UserDetails(int id, UsersIncludeDetails detailsToInclude)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<User> UsersBatch(IEnumerable<int> ids)
         {
             string idsCommaSeparated = String.Join(",", ids);
@@ -80,11 +71,6 @@ namespace AngelList.Wcf
                 UsersRolesResponse response = channel.UsersRolesPage(Convert.ToString(userId), page.ToString());
                 return response;
             }
-        }
-
-        public JsonTypes.Startup Startups(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public List<JsonTypes.Startup> StartupsBatch(IEnumerable<int> ids)
