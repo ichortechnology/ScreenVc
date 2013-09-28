@@ -100,6 +100,10 @@
     <Compile Include="SqlCommonTasks.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AngelList.Interfaces\AngelList.Interfaces.csproj">
+      <Project>{5f90e6ea-fe08-48ee-9ef5-f336a5710855}</Project>
+      <Name>AngelList.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AngelList.JsonNet\AngelList.JsonNet.csproj">
       <Project>{0CEC3E33-21C2-4B74-AB32-F1D819AE3B19}</Project>
       <Name>AngelList.JsonNet</Name>
@@ -115,10 +119,6 @@
     <ProjectReference Include="..\AngelList.Query\AngelList.Query.csproj">
       <Project>{D4376204-ACD8-4F70-B1B6-D1FF0530A94C}</Project>
       <Name>AngelList.Query</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AngelList\AngelList.Interfaces.csproj">
-      <Project>{5F90E6EA-FE08-48EE-9EF5-F336A5710855}</Project>
-      <Name>AngelList.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\LoadInvestorIndustries.Model\LoadInvestorIndustries.Model.csproj">
       <Project>{A99A03DC-D6F1-465E-AF95-EBB8F9059D56}</Project>

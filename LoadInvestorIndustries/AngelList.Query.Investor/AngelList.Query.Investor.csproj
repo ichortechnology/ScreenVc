@@ -89,6 +89,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AngelList.Interfaces\AngelList.Interfaces.csproj">
+      <Project>{5f90e6ea-fe08-48ee-9ef5-f336a5710855}</Project>
+      <Name>AngelList.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AngelList.JsonTypes\AngelList.JsonTypes.csproj">
       <Project>{CE4A2293-C9EA-48FC-ACE5-674222470BF7}</Project>
       <Name>AngelList.JsonTypes</Name>
@@ -96,10 +100,6 @@
     <ProjectReference Include="..\AngelList.Query\AngelList.Query.csproj">
       <Project>{D4376204-ACD8-4F70-B1B6-D1FF0530A94C}</Project>
       <Name>AngelList.Query</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AngelList\AngelList.Interfaces.csproj">
-      <Project>{5F90E6EA-FE08-48EE-9EF5-F336A5710855}</Project>
-      <Name>AngelList.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

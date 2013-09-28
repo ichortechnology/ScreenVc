@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.JsonTypes", "AngelList.JsonTypes\AngelList.JsonTypes.csproj", "{CE4A2293-C9EA-48FC-ACE5-674222470BF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.Interfaces", "AngelList\AngelList.Interfaces.csproj", "{5F90E6EA-FE08-48EE-9EF5-F336A5710855}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.JsonNet", "AngelList.JsonNet\AngelList.JsonNet.csproj", "{0CEC3E33-21C2-4B74-AB32-F1D819AE3B19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestClient", "SimpleRestClient\RestClient.csproj", "{8271B263-A76A-4733-8567-EA2696A25B18}"
@@ -25,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts"
 	ProjectSection(SolutionItems) = preProject
 		SQL Scripts\LoadInvestorIndustries_Create.sql = SQL Scripts\LoadInvestorIndustries_Create.sql
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.Interfaces", "AngelList.Interfaces\AngelList.Interfaces.csproj", "{5F90E6EA-FE08-48EE-9EF5-F336A5710855}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,17 +47,6 @@ Global
 		{CE4A2293-C9EA-48FC-ACE5-674222470BF7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{CE4A2293-C9EA-48FC-ACE5-674222470BF7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{CE4A2293-C9EA-48FC-ACE5-674222470BF7}.Release|x86.ActiveCfg = Release|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|x86.ActiveCfg = Debug|x86
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|x86.Build.0 = Debug|x86
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|x86.ActiveCfg = Release|Any CPU
 		{0CEC3E33-21C2-4B74-AB32-F1D819AE3B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CEC3E33-21C2-4B74-AB32-F1D819AE3B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CEC3E33-21C2-4B74-AB32-F1D819AE3B19}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -146,6 +135,18 @@ Global
 		{055B9F8E-1A49-4F4F-8A59-AD6202C05202}.Release|Mixed Platforms.Build.0 = Release|x86
 		{055B9F8E-1A49-4F4F-8A59-AD6202C05202}.Release|x86.ActiveCfg = Release|x86
 		{055B9F8E-1A49-4F4F-8A59-AD6202C05202}.Release|x86.Build.0 = Release|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|x86.ActiveCfg = Debug|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Debug|x86.Build.0 = Debug|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|x86.ActiveCfg = Release|x86
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
