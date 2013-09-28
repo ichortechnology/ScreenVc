@@ -26,6 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Scripts", "SQL Scripts"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.Interfaces", "AngelList.Interfaces\AngelList.Interfaces.csproj", "{5F90E6EA-FE08-48EE-9EF5-F336A5710855}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E197B01A-D663-492A-A518-F529952CA4D0}"
+	ProjectSection(SolutionItems) = preProject
+		README.html = README.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
