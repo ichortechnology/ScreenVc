@@ -8,7 +8,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using LoadInvestorIndustries.Model;
 using Screen.Vc.DataAccess.Investors;
-using Screen.Vc.DataAccess.Investors.ScreenVcDataSetTableAdapters;
 using AngelList.JsonTypes;
 
 namespace LoadInvestorIndustries.Test
@@ -32,41 +31,35 @@ namespace LoadInvestorIndustries.Test
         [TestMethod]
         public void UpsertInvestor_Success()
         {
-            List<User> investors = new List<User>();
+
+            string nonce = DateTime.Now.Ticks.ToString();
+            sqlCommonTasks.DeleteTableData();
 
             //
             // Test insert.
             //
-
-            string nonce = DateTime.Now.Ticks.ToString();
+            List<User> investors = new List<User>();
             investors.Add(new User() { Id = 1, Name = "Investor 1" + nonce, OnlineBioUrl = "http://bio1" + nonce, LinkedinUrl = "linkedinurl 1" + nonce });
             investors.Add(new User() { Id = 2, Name = "Investor 2" + nonce, OnlineBioUrl = "http://bio2" + nonce, LinkedinUrl = "linkedinurl 2" + nonce });
-
-            sqlCommonTasks.DeleteTableData();
-
             var upsertInvestor = new UpsertInvestor(investors, configurationProvider);
             upsertInvestor.Execute();
 
 
             // Check results.
-            var investorsTable = new ScreenVcDataSet.InvestorDataTable();
-            using (InvestorTableAdapter adapter = new InvestorTableAdapter())
+            using (SqlConnection dbConnection = new SqlConnection(configurationProvider.GetConfiguration(ConfigName.SqlConnectionString)))
             {
-                adapter.Fill(investorsTable);
+                dbConnection.Open();
 
-                foreach (var investor in investors)
+                using (SqlCommand countTable = dbConnection.CreateCommand())
                 {
-                    var rows = from row in investorsTable
-                               where investor.Id == row.ExternalId
-                                    && investor.Name == row.Name
-                                    && investor.OnlineBioUrl == row.OnlineBioUrl
-                                    && investor.LinkedinUrl == row.LinkedInUrl
-                               select row;
+                    countTable.CommandText = "SELECT ExternalId, Name, OnlineBioUrl, LinkedInUrl FROM dbo.ExternalInvestor";
+                    countTable.CommandType = CommandType.Text;
+                    var reader = countTable.ExecuteReader();
 
-                    Assert.AreEqual(1, rows.ToList().Count);
+                    // Go through 1st result set. 
+                    var externalId = reader["ExternalId"];
 
                 }
-
             }
 
             //

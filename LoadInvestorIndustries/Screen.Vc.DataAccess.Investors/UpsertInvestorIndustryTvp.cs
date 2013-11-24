@@ -21,7 +21,7 @@ namespace Screen.Vc.DataAccess.Investors
 
         protected override string GetStoredProcedureName()
         {
-            return StoredProcedureName.UpsertInvestorIndustryTvp.ToString();
+            return StoredProcedureName.sproc_ExternalInvestorExternalIndustry_Upsert.ToString();
         }
 
         protected override SqlParameter[] GetParameters()

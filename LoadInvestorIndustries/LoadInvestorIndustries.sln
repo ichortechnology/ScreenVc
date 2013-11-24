@@ -12,10 +12,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.DataAccess.Investors", "Screen.Vc.DataAccess.Investors\Screen.Vc.DataAccess.Investors.csproj", "{F84B23FC-F4E0-4E06-B717-72BC8BE0EF26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.Query", "AngelList.Query\AngelList.Query.csproj", "{D4376204-ACD8-4F70-B1B6-D1FF0530A94C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855} = {5F90E6EA-FE08-48EE-9EF5-F336A5710855}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelList.Query.Investor", "AngelList.Query.Investor\AngelList.Query.Investor.csproj", "{2B988434-3426-4300-A437-8D21B9F7CC8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadInvestorIndustries.Test", "LoadInvestorIndustries.Test\LoadInvestorIndustries.Test.csproj", "{DA96B77D-916C-4C98-A555-E870AAC2D3AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{055B9F8E-1A49-4F4F-8A59-AD6202C05202} = {055B9F8E-1A49-4F4F-8A59-AD6202C05202}
+		{5F90E6EA-FE08-48EE-9EF5-F336A5710855} = {5F90E6EA-FE08-48EE-9EF5-F336A5710855}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadInvestorIndustries", "LoadInvestorIndustries\LoadInvestorIndustries.csproj", "{055B9F8E-1A49-4F4F-8A59-AD6202C05202}"
 EndProject

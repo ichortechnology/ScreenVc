@@ -76,11 +76,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ScreenVcDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ScreenVcDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="StoredProcedureConstants.cs" />
     <Compile Include="UpsertInvestorIndustryTvp.cs" />
     <Compile Include="UpsertIndustryTvp.cs" />
     <Compile Include="NonQueryAzureStoredProcedure.cs" />
@@ -97,17 +93,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ScreenVcDataSet.xsc">
-      <DependentUpon>ScreenVcDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ScreenVcDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ScreenVcDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ScreenVcDataSet.xss">
-      <DependentUpon>ScreenVcDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

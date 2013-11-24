@@ -7,8 +7,8 @@ namespace Screen.Vc.DataAccess.Investors
 {
     public enum StoredProcedureName
     {
-        UpsertInvestorTvp,
-        UpsertInvestorIndustryTvp,
-        UpsertIndustryTvp
+        sproc_ExternalInvestor_Upsert,
+        sproc_ExternalInvestorExternalIndustry_Upsert,
+        sproc_ExternalIndustry_Upsert
     }
 }

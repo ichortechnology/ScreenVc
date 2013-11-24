@@ -8,7 +8,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using LoadInvestorIndustries.Model;
 using Screen.Vc.DataAccess.Investors;
-using Screen.Vc.DataAccess.Investors.ScreenVcDataSetTableAdapters;
 using AngelList.JsonTypes;
 
 namespace LoadInvestorIndustries.Test
@@ -31,21 +30,21 @@ namespace LoadInvestorIndustries.Test
                 // delete table data.
                 using (SqlCommand deleteTable = dbConnection.CreateCommand())
                 {
-                    deleteTable.CommandText = "delete from investorindustry" ;
+                    deleteTable.CommandText = "delete from externalinvestorexternalindustry" ;
                     deleteTable.CommandType = CommandType.Text;
                     deleteTable.ExecuteNonQuery();
                 }
 
                 using (SqlCommand deleteTable = dbConnection.CreateCommand())
                 {
-                    deleteTable.CommandText = "delete from investor";
+                    deleteTable.CommandText = "delete from externalinvestor";
                     deleteTable.CommandType = CommandType.Text;
                     deleteTable.ExecuteNonQuery();
                 }
 
                 using (SqlCommand deleteTable = dbConnection.CreateCommand())
                 {
-                    deleteTable.CommandText = "delete from industry";
+                    deleteTable.CommandText = "delete from externalindustry";
                     deleteTable.CommandType = CommandType.Text;
                     deleteTable.ExecuteNonQuery();
                 }
@@ -61,7 +60,7 @@ namespace LoadInvestorIndustries.Test
 
                 using (SqlCommand countTable = dbConnection.CreateCommand())
                 {
-                    countTable.CommandText = "select count(id) from investor";
+                    countTable.CommandText = "select count(id) from externalinvestor";
                     countTable.CommandType = CommandType.Text;
                     object count = countTable.ExecuteScalar();
 
@@ -70,7 +69,7 @@ namespace LoadInvestorIndustries.Test
 
                 using (SqlCommand countTable = dbConnection.CreateCommand())
                 {
-                    countTable.CommandText = "select count(id) from industry";
+                    countTable.CommandText = "select count(id) from externalindustry";
                     countTable.CommandType = CommandType.Text;
                     object count = countTable.ExecuteScalar();
 
@@ -80,7 +79,7 @@ namespace LoadInvestorIndustries.Test
 
                 using (SqlCommand countTable = dbConnection.CreateCommand())
                 {
-                    countTable.CommandText = "select count(id) from investorindustry";
+                    countTable.CommandText = "select count(id) from externalinvestorexternalindustry";
                     countTable.CommandType = CommandType.Text;
                     object count = countTable.ExecuteScalar();
 

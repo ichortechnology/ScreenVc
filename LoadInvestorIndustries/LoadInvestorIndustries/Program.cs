@@ -28,8 +28,9 @@ namespace LoadInvestorIndustries
             try
             {
                 // Parse command line.
-                int start;
-                int end;
+                int start = 1;
+                int end = int.MaxValue;
+
                 if (!CommandLine.TryParse(args, out start, out end))
                 {
                     var entry = new LogEntry();

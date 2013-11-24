@@ -29,13 +29,10 @@ namespace LoadInvestorIndustries.Model
             // Create a DataTable without the primary key column, to match the table type of the stored procedure.
             DataTable TvpDataTable = new DataTable();
 
-            // Use an instance of the generated dataset table to define the columns of the new table.
-            ScreenVcDataSet.IndustryDataTable baseTable = new ScreenVcDataSet.IndustryDataTable();
-
-            TvpDataTable.Columns.Add(baseTable.ExternalIdColumn.ColumnName, baseTable.ExternalIdColumn.DataType);
-            TvpDataTable.Columns.Add(baseTable.NameColumn.ColumnName, baseTable.NameColumn.DataType);
-            TvpDataTable.Columns.Add(baseTable.DisplayNameColumn.ColumnName, baseTable.DisplayNameColumn.DataType);
-            TvpDataTable.Columns.Add(baseTable.UpdatedColumn.ColumnName, baseTable.UpdatedColumn.DataType);
+            TvpDataTable.Columns.Add(ColumnNames.ExternalIndustryId, typeof(Int32));
+            TvpDataTable.Columns.Add(ColumnNames.Name, typeof(string));
+            TvpDataTable.Columns.Add(ColumnNames.DisplayName, typeof(string));
+            TvpDataTable.Columns.Add(ColumnNames.Updated, typeof(DateTime));
 
             foreach (Market market in markets)
             {
