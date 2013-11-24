@@ -133,4 +133,46 @@
     <Property Name="ParentElementType" Value="SqlSchema" />
     <Property Name="NewName" Value="[sproc_UnreadCommentsSummary_Get]" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="82674c88-b501-446b-b18e-292ecfe146a6" ChangeDateTime="10/21/2013 05:21:30">
+    <Property Name="ElementName" Value="[dbo].[ExternalInvestorSource].[Url]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalInvestorSource]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Uri" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="02247d81-d312-41fa-80ee-5ca56a2f0c45" ChangeDateTime="10/22/2013 05:58:29">
+    <Property Name="ElementName" Value="[dbo].[ExternalInvestor].[Ex]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalInvestor]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExternalInvestorSourceId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d12db85e-fa8a-46b9-9f29-ad42bd783c1b" ChangeDateTime="11/04/2013 06:16:20">
+    <Property Name="ElementName" Value="[dbo].[ExternalInvestor].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalInvestor]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExternalInvestorId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ae66b104-6e1a-434f-951a-8c481f4981eb" ChangeDateTime="11/04/2013 06:17:27">
+    <Property Name="ElementName" Value="[dbo].[CompanyAttribute].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CompanyAttribute]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CompanyAttributeId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cc3b6cb1-ccaa-450e-a197-82137fbea4c0" ChangeDateTime="11/04/2013 06:18:30">
+    <Property Name="ElementName" Value="[dbo].[AttributeQuestion].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[AttributeQuestion]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AttributeQuestionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3ecce029-7e03-448f-a2c6-b42819f65d75" ChangeDateTime="11/04/2013 06:59:01">
+    <Property Name="ElementName" Value="[dbo].[ExternalIndustry].[IndustryId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ExternalIndustry]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExternalIndustryId" />
+  </Operation>
 </Operations>

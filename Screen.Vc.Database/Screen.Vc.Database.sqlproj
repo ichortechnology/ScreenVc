@@ -59,6 +59,8 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Sprocs" />
+    <Folder Include="Types" />
+    <Folder Include="SetupScripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\webpages_Membership.sql" />
@@ -77,18 +79,32 @@
     <Build Include="Sprocs\sproc_EntrepreneurHomePageData_Get.sql" />
     <Build Include="Tables\EntrepreneurCompany.sql" />
     <Build Include="Tables\QuestionUserFreshness.sql" />
-    <Build Include="Tables\Industry.sql" />
+    <Build Include="Tables\ExternalIndustry.sql" />
     <Build Include="Tables\CompanyIndustry.sql" />
     <Build Include="Tables\InvestorIndustry.sql" />
     <Build Include="Sprocs\sproc_CompanySummary_Get.sql" />
     <Build Include="Sprocs\sproc_UnreadQuestionsCount_Get.sql" />
     <Build Include="Sprocs\sproc_MatchingInvestors_Get.sql" />
     <Build Include="Sprocs\sproc_UnreadComments_Get.sql" />
+    <Build Include="Tables\ExternalInvestorSource.sql" />
+    <Build Include="Tables\ExternalInvestor.sql" />
+    <Build Include="Sprocs\sproc_ExternalIndustry_Upsert.sql" />
+    <Build Include="Types\ExternalIndustryType.sql" />
+    <Build Include="Types\ExternalInvestorExternalIndustryType.sql" />
+    <Build Include="Types\ExternalInvestorType.sql" />
+    <Build Include="Sprocs\sproc_ExternalInvestorExternalIndustry_Upsert.sql" />
+    <Build Include="Tables\ExternalInvestorExternalIndustry.sql" />
+    <Build Include="Tables\Industry.sql" />
+    <Build Include="Sprocs\sproc_ExternalInvestor_Upsert.sql" />
+    <Build Include="Sprocs\sproc_ExternalInvestorSource_GetByName.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\UserProfile.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Screen.Vc.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SetupScripts\TestPopulation.sql" />
   </ItemGroup>
 </Project>
