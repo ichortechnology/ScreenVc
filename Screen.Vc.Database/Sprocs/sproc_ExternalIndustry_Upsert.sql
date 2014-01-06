@@ -6,10 +6,10 @@ BEGIN
     USING @industryTvp AS S 
     ON (T.ExternalId = S.ExternalId) 
     WHEN MATCHED 
-        THEN UPDATE SET T.Name = S.Name, T.DisplayName = S.DisplayName, T.Updated = GETDATE()
+        THEN UPDATE SET T.Name = S.Name, T.DisplayName = S.DisplayName, T.Updated = GETUTCDATE()
     WHEN NOT MATCHED  
-        THEN INSERT (ExternalId, Name, DisplayName) 
-		     VALUES (S.ExternalId, S.Name, S.DisplayName);
+        THEN INSERT (ExternalId, Name, DisplayName, Updated) 
+		     VALUES (S.ExternalId, S.Name, S.DisplayName, GETUTCDATE());
 
     RETURN 0
 END
