@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <div id="head" style="color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+        <h1 class="instapaper_title" style="font-size: 30px; margin: 15px 0px; line-height: 1.1;">Instructions for running the LoadInvestorIndustries Console App</h1>
+    </div>
+    <div id="wiki-content" style="color: rgb(51, 51, 51); font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+        <div class="wrap">
+            <div id="wiki-body" class="gollum-markdown-content instapaper_body">
+                <div class="markdown-body" style="font-size: 15px; line-height: 1.7; overflow: hidden; padding: 0px 30px; margin: 0px -30px;">
+                    <h3 style="margin-top: 0px !important; margin-bottom: 15px; line-height: 1.7; font-size: 1.5em; margin-right: 0px; margin-left: 0px; padding: 0px; font-weight: bold; cursor: text; position: relative;"><a class="anchor" href="https://github.com/nchetan/ScreenVc/wiki/Instructions-for-running-the-LoadInvestorIndustries-Console-App#requirements-and-dependencies" name="requirements-and-dependencies" style="color: rgb(65, 131, 196); text-decoration: none; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; cursor: pointer; position: absolute; top: 0px; left: 0px; bottom: 0px;"></a>Requirements and Dependencies</h3>
+                    <ul style="padding: 0px 0px 0px 30px; margin: 15px 0px;">
+                        <li>.NET Framework 4.5</li>
+                        <li>Enterprise Library Logging Component Version 5.0.505.0</li>
+                        <li>Windows Azure SDK 2.1</li>
+                        <li>Json.NET 4.5</li>
+                        <li>SQL Server or Azure SQL database</li>
+                    </ul>
+                    <h3 style="margin: 1em 0px 15px; line-height: 1.7; font-size: 1.5em; padding: 0px; font-weight: bold; cursor: text; position: relative;"><a class="anchor" href="https://github.com/nchetan/ScreenVc/wiki/Instructions-for-running-the-LoadInvestorIndustries-Console-App#build-and-configuration" name="build-and-configuration" style="color: rgb(65, 131, 196); text-decoration: none; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; cursor: pointer; position: absolute; top: 0px; left: 0px; bottom: 0px;"></a>Build and Configuration</h3>
+                    <ol style="padding: 0px 0px 0px 30px; margin: 15px 0px;">
+                        <li>
+                            <p style="margin: 15px 0px;">
+                                Create the database objects by running &quot;SQL Scripts\LoadInvestorIndustries_Create.sql&quot; in the ScreenVc database. This will create three tables, three user-define table types, and three stored procedures.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 15px 0px;">
+                                Open the Visual Studio solution and edit the configuration file connection string Screen.Vc.DataAccess.Investors.Properties.Settings.ScreenVcConnectionString. The &quot;reference&quot; config section is in Screen.Vc.DataAccess.Investors. The config section used by LoadInvestorIndustries.exe is in LoadInvestorIndustries\App.config.</p>
+                        </li>
+                    </ol>
+                    <p style="margin: 15px 0px;">
+                        Be sure to set MultipleActiveResultSets=True. You may want to set a minimum connection pool size.</p>
+                    <ol style="padding: 0px 0px 0px 30px; margin: 15px 0px;">
+                        <li>
+                            <p style="margin: 15px 0px;">
+                                By default, two log files are written to the working directory of the application. If you want to change this, edit the Enterprise Logging configuration. Two logs are written: LoadInvestorIndustriesGeneral.log for verbose log messages, and LoadInvestorIndustriesWarning.log for severity of Warning or higher.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 15px 0px;">
+                                Using Visual Studio 2012, build the project. Dependencies should be present in the solution, but can be installed via NuGet.</p>
+                        </li>
+                        <li>
+                            <p style="margin: 15px 0px;">
+                                Run &quot;LoadInvestorIndustries.exe -?&quot; for usage. Parameters &quot;155 160&quot; give a good sample of investor and non-investor ids. (For debugging, set LoadInvestorIndustries to be the startup project and in Properties/Debug set command line arguments to something reasonable like &quot;155 160&quot;.)</p>
+                        </li>
+                    </ol>
+                    <h4 style="margin: 1em 0px 15px; line-height: 1.7; font-size: 1.2em; padding: 0px; font-weight: bold; cursor: text; position: relative;"><a class="anchor" href="https://github.com/nchetan/ScreenVc/wiki/Instructions-for-running-the-LoadInvestorIndustries-Console-App#additional-configuration" name="additional-configuration" style="color: rgb(65, 131, 196); text-decoration: none; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; cursor: pointer; position: absolute; top: 0px; left: 0px; bottom: 0px;"></a>Additional Configuration</h4>
+                    <ul style="padding: 0px 0px 0px 30px; margin: 15px 0px;">
+                        <li>In LoadInvestorIndustries.Properties.Settings, use MaxRangeLength and MaxRanges to control the size and number of batches of user ids fetched.</li>
+                    </ul>
+                    <h3 style="margin: 1em 0px 15px; line-height: 1.7; font-size: 1.5em; padding: 0px; font-weight: bold; cursor: text; position: relative;"><a class="anchor" href="https://github.com/nchetan/ScreenVc/wiki/Instructions-for-running-the-LoadInvestorIndustries-Console-App#running-the-unit-tests-in-loadinvestorindustriestest" name="running-the-unit-tests-in-loadinvestorindustriestest" style="color: rgb(65, 131, 196); text-decoration: none; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; cursor: pointer; position: absolute; top: 0px; left: 0px; bottom: 0px;"></a>Running the Unit Tests in LoadInvestorIndustries.Test.</h3>
+                    <p style="margin-top: 15px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px;">
+                        <strong style="font-weight: bold;">In order to verify the data saved to the database,<span class="Apple-converted-space">&nbsp;</span><em>the unit tests delete all data from the tables.</em></strong><span class="Apple-converted-space">&nbsp;</span>Only run the test against a test database.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
