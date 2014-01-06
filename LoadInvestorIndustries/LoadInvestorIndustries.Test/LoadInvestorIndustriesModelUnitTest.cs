@@ -58,14 +58,12 @@ namespace LoadInvestorIndustries.Test
 
                     // Go through 1st result set. 
                     var externalId = reader["ExternalId"];
-
                 }
             }
 
             //
             // Test update.
             //
-
             investors.Clear();
             nonce = DateTime.Now.Ticks.ToString();
             investors.Add(new User() { Id = 1, Name = "Investor 1" + nonce, OnlineBioUrl = "http://bio1" + nonce, LinkedinUrl = "linkedinurl 1" + nonce });
@@ -73,27 +71,6 @@ namespace LoadInvestorIndustries.Test
 
             upsertInvestor = new UpsertInvestor(investors, configurationProvider);
             upsertInvestor.Execute();
-
-
-            // Check results.
-            investorsTable = new ScreenVcDataSet.InvestorDataTable();
-            using (InvestorTableAdapter adapter = new InvestorTableAdapter())
-            {
-                adapter.Fill(investorsTable);
-
-                foreach (var investor in investors)
-                {
-                    var rows = from row in investorsTable
-                               where investor.Id == row.ExternalId
-                                    && investor.Name == row.Name
-                                    && investor.OnlineBioUrl == row.OnlineBioUrl
-                                    && investor.LinkedinUrl == row.LinkedInUrl
-                               select row;
-
-                    Assert.AreEqual(1, rows.ToList().Count);
-
-                }
-            }
 
         }
 

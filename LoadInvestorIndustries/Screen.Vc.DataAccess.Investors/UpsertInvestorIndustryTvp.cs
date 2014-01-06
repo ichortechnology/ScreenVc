@@ -28,7 +28,7 @@ namespace Screen.Vc.DataAccess.Investors
         {
             SqlParameter[] parameters = new SqlParameter[1];
 
-            parameters[0] = new SqlParameter("@investorIndustryTvp", SqlDbType.Structured);
+            parameters[0] = new SqlParameter("@externalInvestorExternalIndustryTvp", SqlDbType.Structured);
             parameters[0].Value = InvestorIndustryDataTable;
 
             return parameters;

@@ -69,6 +69,7 @@ namespace LoadInvestorIndustries
 
             Console.WriteLine();
             Console.WriteLine("LoadInvestorIndustries completed.");
+            Console.WriteLine("Press any key to exit...");
             // TODO, 2, LoadInvestorIndustries: Read service base address from configuration
             Console.ReadLine();
         }
