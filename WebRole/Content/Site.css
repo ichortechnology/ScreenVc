@@ -6,10 +6,9 @@
 
 body {
     background-color: #fff;
-    border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-family: "Tahoma", "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
 }
@@ -22,15 +21,12 @@ a {
     text-decoration: underline;
 }
 
-    a:link, a:visited,
-    a:active, a:hover {
-        color: #333;
-    }
 
-    a:hover {
-        background-color: #c7d1d6;
-    }
-
+#top-header
+{
+    border-top: 8px solid #000;
+    display: block;
+}
 header, footer, hgroup,
 nav, section {
     display: block;
@@ -99,30 +95,32 @@ h5, h6 {
 }
 
 #body {
+    background: url("../Images/bg.jpg") no-repeat  0 -60px;
     background-color: #efeeef;
     clear: both;
     padding-bottom: 35px;
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
         padding-top: 30px;
     }
 
-    .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
-    }
-
-header .content-wrapper {
+.header .content-wrapper {
     padding-top: 20px; 
 }
 
+.header
+{
+    padding-top:20px;
+}
 footer {
+    text-align: center;
     clear: both;
-    background-color: #e2e2e2;
+    background-color: #000;
+    color:#fff;
     font-size: .8em;
-    height: 100px;
+    height: 50px;
 }
 
 
@@ -133,6 +131,7 @@ footer {
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
     font-size: 2.3em;
     margin: 0;
+    margin-bottom : 20px;
 }
 
 .site-title a, .site-title a:hover, .site-title a:active {
@@ -143,48 +142,17 @@ footer {
 }
 
 
-/* login
-----------------------------------------------------------*/
-#login {
-    display: block;
-    font-size: .85em;
-    margin: 0 0 10px;
-    text-align: right;
-}
-
-    #login a {
-        background-color: #d3dce0;
-        margin-left: 10px;
-        margin-right: 3px;
-        padding: 2px 3px;
-        text-decoration: none;
-    }
-
-    #login a.username {
-        background: none;
-        margin: 0;
-        padding: 0;
-        text-decoration: underline;
-    }
-
-    #login ul {
-        margin: 0;
-    }
-
-    #login li {
-        display: inline;
-        list-style: none;
-    }
-
 
 /* menu
 ----------------------------------------------------------*/
 ul#menu {
-    font-size: 1.3em;
+    font-size: 1em;
+    font-stretch:expanded;
     font-weight: 600;
-    margin: 0 0 5px;
+    margin: 15px 0 5px;
     padding: 0;
     text-align: right;
+
 }
 
     ul#menu li {
@@ -195,113 +163,19 @@ ul#menu {
 
         ul#menu li a {
             background: none;
-            color: #999;
+            color: #000;
             text-decoration: none;
         }
 
         ul#menu li a:hover {
-            color: #333;
+            color: #c8c8c8;
             text-decoration: none;
         }
 
-
-/* page elements
-----------------------------------------------------------*/
-/* featured */
-.featured {
-    background-color: #fff;
+.homebody
+{
+    background: url("../Images/bg.jpg") no-repeat left top;
 }
-
-    .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        color: #3e5667;
-        padding: 20px 40px 30px 40px;
-    }
-
-        .featured hgroup.title h1, .featured hgroup.title h2 {
-            color: #fff;
-        }
-
-        .featured p {
-            font-size: 1.1em;
-        }
-
-/* page titles */
-hgroup.title {
-    margin-bottom: 10px;
-}
-
-hgroup.title h1, hgroup.title h2 {
-    display: inline;
-}
-
-hgroup.title h2 {
-    font-weight: normal;
-    margin-left: 3px;
-}
-
-/* features */
-section.feature {
-    width: 300px;
-    float: left;
-    padding: 10px;
-}
-
-/* ordered list */
-ol.round {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-    ol.round li {
-        margin: 25px 0;
-        padding-left: 45px;
-    }
-
-        ol.round li.zero {
-            background: url("../Images/orderedList0.png") no-repeat;
-        }
-
-        ol.round li.one {
-            background: url("../Images/orderedList1.png") no-repeat;
-        }
-
-        ol.round li.two {
-            background: url("../Images/orderedList2.png") no-repeat;
-        }
-
-        ol.round li.three {
-            background: url("../Images/orderedList3.png") no-repeat;
-        }
-
-        ol.round li.four {
-            background: url("../Images/orderedList4.png") no-repeat;
-        }
-
-        ol.round li.five {
-            background: url("../Images/orderedList5.png") no-repeat;
-        }
-
-        ol.round li.six {
-            background: url("../Images/orderedList6.png") no-repeat;
-        }
-
-        ol.round li.seven {
-            background: url("../Images/orderedList7.png") no-repeat;
-        }
-
-        ol.round li.eight {
-            background: url("../Images/orderedList8.png") no-repeat;
-        }
-
-        ol.round li.nine {
-            background: url("../Images/orderedList9.png") no-repeat;
-        }
 
 /* content */
 article {
@@ -585,6 +459,26 @@ td {
 tr.pager td {
     padding: 0 0.25em 0 0;
 }
+
+.centered
+{
+    font-family: Myriad Pro;
+    font-size: 2.2em;
+    font-weight: normal;
+    width: 350px;
+    margin-top: 200px;
+}
+.action-link-button
+{
+    padding: 10px 20px;
+    font-size: 0.5em;
+}
+    .orange
+    {
+        background-color: #ff6a00;
+        border: 1px solid #ff680c;
+        color: #FFF;
+    }
 
 
 /********************

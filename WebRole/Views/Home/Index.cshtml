@@ -1,17 +1,16 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div id="body-enclosing">
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<div id="body-enclosing" style="height:540px;">
     <div id="entrepreneur" class="float-left centered">
-        Looking for investors who are ready and eager to invest? Looking to spend less time being screened, poked, and prodded, and more time executing your business?
+        connecting the right deals with the right investors at the right time
         <br />
         <br />
-        @Html.ActionLink("Entrepreneurs", "Index", Screen.Vc.WebRole.Source.ControllerNames.Entrepreneur, null, new { @class="action-link-button" } )
+        @Html.ActionLink("Discover Projects", "Index", "Home", null, new { @class="action-link-button orange" } )
     </div>
-    <div id="investor" class="float-right centered">
-        Looking for more and better deal flow? Would you like to spend less time screening and doing due diligence, and spend more time digging into the team, market, and idea of prospective deals?
-        <br />
-        <br />
-        @Html.ActionLink("Investor", "Index", "Investor", null, new { @class="action-link-button"})
-    </div>
+    
 </div>

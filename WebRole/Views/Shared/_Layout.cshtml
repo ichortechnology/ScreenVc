@@ -8,15 +8,17 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+       
     </head>
     <body>
-        <div class="page-container">
+        <div id="top-header"></div>
+        <div class="page-container main-header">
             <div id="notify-container" class="notify-container"></div>
             @if (!Request.IsAuthenticated)
             {
                 <div class="authentication-container"></div>
             }
-            <div class="content-wrapper">
+            <div  class="content-wrapper header" style="display:none;">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionImage("Index", "Home", "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
                 </div>
@@ -26,8 +28,8 @@
                             <!--
                                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             -->
-                            <li>@Html.ActionLink("Investors", "Index", "Investor")</li>
-                            <li>@Html.ActionLink("Entrepreneurs", "Index", Screen.Vc.WebRole.Source.ControllerNames.Entrepreneur)</li>
+                            <li>@Html.ActionLink("Investors", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Entrepreneurs", "Index", "Home")</li>
                             <!--
                             <li>@Html.ActionLink("About Us", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
@@ -41,17 +43,17 @@
                 @RenderBody()
                 </section>
             </div>
-
         </div>
         <footer>
             <div class="content-wrapper">
-                <div class="float-left">
+                <div>
                     <p>&copy; @DateTime.Now.Year - Screen.Vc.</p>
                 </div>
             </div>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
+        <script src="~/Scripts/layout.js"></script>
         @RenderSection("scripts", required: false)
     </body>
 </html>
