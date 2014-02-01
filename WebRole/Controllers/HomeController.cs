@@ -22,10 +22,8 @@ namespace Screen.Vc.WebRole.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult BrowseProjects()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

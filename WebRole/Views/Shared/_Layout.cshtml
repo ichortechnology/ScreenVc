@@ -22,7 +22,8 @@
                 <div class="float-left">
                     <p class="site-title">@Html.ActionImage("Index", "Home", "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
                 </div>
-                <div class="float-right">
+                <div class="float-right ">
+                    <br />
                     <nav>
                         <ul id="menu">
                             <!--
@@ -37,8 +38,9 @@
                         </ul>
                     </nav>
                 </div>
+                <br class="clear" />
             </div>
-            <div id="body">
+            <div id="body" class="mainBody">
                 <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
                 </section>

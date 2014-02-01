@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "Screen.Vc", "Screen.Vc\Screen.Vc.ccproj", "{415740E9-2236-495D-B40A-9DBD2EE25C73}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screen.Vc.WebRole", "WebRole\Screen.Vc.WebRole.csproj", "{0E06171A-47E0-498E-BCE2-1469FDDB495D}"
