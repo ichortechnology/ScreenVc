@@ -30,6 +30,7 @@ namespace Screen.Vc.WebRole.Source
     {
         public const string NoCompanies = "NoCompanies";
         public const string RegisterCompany = "RegisterCompany";
+        public static string BrowseProjects = "BrowseProjects";
     }
 
     public class CompanyActions

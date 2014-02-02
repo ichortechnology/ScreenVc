@@ -133,6 +133,12 @@ h5, h6 {
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px;
+        font-style: italic;
+    }
+    .headerSearch input:focus {
+        -webkit-border-radius: 10px!important;
+        -moz-border-radius: 10px!important;
+        border-radius: 10px!important;
     }
 
 footer {
@@ -141,14 +147,36 @@ footer {
     background-color: #000;
     color: #fff;
     font-size: .8em;
-    height: 50px;
+    padding: 8px 0;
+    margin-top: -11px;
 }
 
 .footer {
     background-color: #fff;
     color: #666;
+    text-align: left;
+    height: 250px;
 }
 
+    .footer ul {
+        padding:0;
+        margin: 0px 190px 5px 20px;
+        list-style:none;
+        display: block;
+        float: left;
+    }
+        .footer ul li {
+            margin: 10px 0px;
+        }
+            .footer ul li a {
+                text-decoration: none;
+                color: #999;
+            }
+.site-title-footer{
+    margin: 15px 0;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
 /* site title
 ----------------------------------------------------------*/
 .site-title {
@@ -173,7 +201,7 @@ footer {
 ul#menu {
     font-size: 12px;
     font-stretch: expanded;
-    font-weight: 600;
+    font-weight: bold;
     margin: 5px 0 5px;
     padding: 0;
     text-align: right;
@@ -488,12 +516,13 @@ tr.pager td {
     font-size: 2.2em;
     font-weight: normal;
     width: 350px;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .action-link-button {
     padding: 10px 20px;
     font-size: 0.5em;
+    text-decoration: none;
 }
 
 .orange {
@@ -506,7 +535,10 @@ tr.pager td {
 .bgGray {
     background-color: #ccc;
 }
-
+h2.companyd_regheading.pageheading{
+    width: 95.4%;
+    padding: 20px 20px 20px 10px;
+}
 .projectLeft {
     width: 70%;
     color: #666 !important;
@@ -514,7 +546,7 @@ tr.pager td {
 
     .projectLeft .recentlyUploaded {
         background-color: #fff;
-        margin: 20px 0px 20px 20px;
+        margin: 20px 0px 20px 0px;
         font-weight: bold;
         padding: 20px;
     }
@@ -522,7 +554,7 @@ tr.pager td {
     .projectLeft .projectItem {
         height: 300px;
         background-color: #fff;
-        margin: 20px 0px 20px 20px;
+        margin: 20px 0px 20px 0px;
     }
 
         .projectLeft .projectItem .top {
@@ -535,6 +567,7 @@ tr.pager td {
             .projectLeft .projectItem .top h3 {
                 margin: 10px;
                 color: #666 !important;
+                font-size: 15px;
             }
 
             .projectLeft .projectItem .top img {
@@ -553,7 +586,8 @@ tr.pager td {
                 margin: 0px 10px 10px 10px;
             }
 
-        .projectLeft .projectItem .bottom {
+        .projectLeft .projectItem .bottom,
+        .company_reg .bottom {
             background-color: #345572;
             width: 88%;
             height: 70px;
@@ -561,18 +595,22 @@ tr.pager td {
             text-align: right;
         }
 
-            .projectLeft .projectItem .bottom div {
+            .projectLeft .projectItem .bottom div,
+            .company_reg .bottom div {
                 margin-left: 225px;
             }
 
-                .projectLeft .projectItem .bottom div span {
+                .projectLeft .projectItem .bottom div span,
+                .company_reg .bottom div span {
                     padding: 25px 0px 15px 10px;
                     display: block;
                     float: left;
                 }
 
-                    .projectLeft .projectItem .bottom div span a {
+                    .projectLeft .projectItem .bottom div span a,
+                    .company_reg .bottom div span a{
                         color: #90b4d3;
+                        text-decoration: none;
                     }
 
         .projectLeft .projectItem .right {
@@ -586,7 +624,8 @@ tr.pager td {
 
             .projectLeft .projectItem .right span {
                 display: block;
-                margin-top: 140px;
+                margin-top: 120px;
+                font-size: 30px;
             }
 
 .projectRight {
@@ -835,4 +874,124 @@ body {
         footer p {
             margin: 0;
         }
+}
+
+/*Company Registration*/
+
+.projectLeft.company_reg {
+    width: 76%;
+}
+.company_reg .recentlyUploaded {
+    height: 275px;
+}
+h2.companyd_regheading {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 72%;
+    font-size: 18px;
+}
+.company_reg button {
+    background-color: #ffb100;
+    border: none;
+    color: #fff;
+    margin-bottom: 12px;
+}
+.company_reg input,
+.company_reg textarea{
+    background-color: #ebebeb;
+    margin-bottom: 12px;
+}
+.company_reg .sectionheading {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.grid_a {
+    width: 30%;
+    float: left;
+    margin-right: 6%;
+    font-size: 14px;
+    padding-top: 5px;
+}
+.grid_b {
+    width: 27%;
+    float: left;
+}
+.companyname .grid_b {
+    width: 62%;
+}
+.companylogo .grid_b {
+    width: 13%;
+    margin-right: 18%;
+}
+.pitchvideo .grid_b,
+.financial_files .grid_b,
+.background_files .grid_b{
+    width: 13%;
+}
+.pitchor {
+    margin: 0 15px 0 5px;
+}
+.pitchupload {
+width: 43%;
+font-style: italic;
+}
+.pitchor,
+.pitchupload {
+    float: left;
+    margin-top: 8px;
+}
+textarea.grid_b {
+    width: 62%;
+}
+.projectLeft.company_reg .recentlyUploaded {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.projectLeft.company_reg .recentlyUploaded.first {
+    margin-top: 0;
+}
+.projectLeft.company_reg .bottom {
+    width: 100%;
+    float: none;
+
+}
+.projectLeft.company_reg .bottom div {
+    margin-left: 410px;
+}
+.projectLeft.company_reg .bottom .save {
+    padding: 26px 20px 27px 25px;
+    background-color: #ffb100;
+    float: right;
+}
+.projectLeft.company_reg .bottom .save.register{
+padding: 28px 19px 25px 26px;
+}
+
+.projectLeft.company_reg .bottom a {
+    padding-right: 15px;
+}
+.projectLeft.company_reg .bottom .save a{
+    color: #fff;
+    font-weight: bold;
+}
+.projectLeft.company_reg .bottom.last{
+    margin-bottom: 25px;
+}
+.faq .faqtextbox {
+width: 98%;
+}
+.faq button.faqbutton{
+    width: 13%;
+    float: right;
+}
+.projectLeft.company_reg .recentlyUploaded.faq {
+height: 300px;
+}
+.faq button.faqbutton.addnew{
+    width: 13%;
+    float: left;
+    margin-top: 70px;
 }

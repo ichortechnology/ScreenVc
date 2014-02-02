@@ -63,6 +63,13 @@ namespace Screen.Vc.WebRole.Controllers
         }
 
         //
+        // Get: /Entrepreneur/BrowseProjects
+        public ActionResult BrowseProjects()
+        {
+            return View();
+        }
+
+        //
         // Get: /Entrepreneur/UserProfile
         public ActionResult UserProfile()
         {

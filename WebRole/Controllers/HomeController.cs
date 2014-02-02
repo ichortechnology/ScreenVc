@@ -22,9 +22,5 @@ namespace Screen.Vc.WebRole.Controllers
             return View();
         }
 
-        public ActionResult BrowseProjects()
-        {
-            return View();
-        }
     }
 }

@@ -396,8 +396,7 @@
     <Content Include="Views\Entrepreneur\_NoCompany.cshtml" />
     <Content Include="Views\Entrepreneur\_CompanyDetails.cshtml" />
     <Content Include="Views\Entrepreneur\RegisterCompany.cshtml" />
-    <Content Include="Views\Home\BrowseProjects.cshtml" />
-    <Content Include="Views\Shared\_LayoutNew.cshtml" />
+    <Content Include="Views\Entrepreneur\BrowseProjects.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

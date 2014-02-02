@@ -15,17 +15,23 @@
     <body>
         <header>
             <div id="notify-container" class="notify-container"></div>
-            <div class="content-wrapper">
+            <div class="header">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionImage("Index", ControllerNames.Entrepreneur, "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
+                    <p class="site-title">@Html.ActionImage("Index", ControllerNames.Home, "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
                 </div>
                 <div class="float-right">
-                    <section id="login">
+                    <div class="headerSearch"><input type="text" placeholder="Search..." /></div>
+                    @*<section id="login">
                         @Html.Partial("~/Views/Entrepreneur/_EntrepreneurLoginPartial.cshtml")
-                    </section>
+                    </section>*@
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Entrepreneur", Actions.Index, ControllerNames.Entrepreneur)</li>
+                            <li>@Html.ActionLink("HOME", Actions.Index, ControllerNames.Entrepreneur)</li>
+                            <li>@Html.ActionLink("BROWSE PROJECTS", EntrepreneurActions.BrowseProjects, ControllerNames.Entrepreneur)</li>
+                            <li>@Html.ActionLink("MY FAVORITE", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</li>
+                            <li>@Html.ActionLink("HISTORY", "About", "Home")</li>
+                            <li>@Html.ActionLink("ABOUT US", Actions.About, "Home")</li>
+                            <li>@Html.ActionLink("CONTACT US", Actions.Contact, "Home")</li>
                             @if (Request.IsAuthenticated)
                             {
                                 <li>
@@ -34,11 +40,11 @@
                                 <li>
                                 @Html.ActionLink("Companies", Actions.Index, ControllerNames.Company)</li>
                             }
-                            <li>@Html.ActionLink("About Us", Actions.About, "Home")</li>
-                            <li>@Html.ActionLink("Contact Us", Actions.Contact, "Home")</li>
+                            
                         </ul>
                     </nav>
                 </div>
+                <br class="clear" />
             </div>
         </header>
         <div id="body">
@@ -46,11 +52,36 @@
             @RenderBody()
             </section>
         </div>
-        <footer>
+        <footer class="footer">
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - Screen.Vc.</p>
+                    <p class="site-title-footer">@Html.ActionImage("Index", ControllerNames.Home, "~/Images/ScreenVcLogo.png", "Logo")</p>
                 </div>
+                <br class="clear"/>
+                <ul>
+                    <li>@Html.ActionLink("HOME", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("BROWSE PROJECTS", EntrepreneurActions.BrowseProjects, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("MY FAVORITES", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("HISTORY", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("ABOUT US", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("CONTACT US", Actions.Index, ControllerNames.Entrepreneur)</li>
+                </ul>
+                <ul>
+                    <li>@Html.ActionLink("HOME", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("BROWSE PROJECTS", EntrepreneurActions.BrowseProjects, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("MY FAVORITES", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("HISTORY", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("ABOUT US", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("CONTACT US", Actions.Index, ControllerNames.Entrepreneur)</li>
+                </ul>
+                <ul>
+                    <li>@Html.ActionLink("HOME", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("BROWSE PROJECTS", EntrepreneurActions.BrowseProjects, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("MY FAVORITES", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("HISTORY", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("ABOUT US", Actions.Index, ControllerNames.Entrepreneur)</li>
+                    <li>@Html.ActionLink("CONTACT US", Actions.Index, ControllerNames.Entrepreneur)</li>
+                </ul>
             </div>
         </footer>
 
