@@ -891,7 +891,7 @@ h2.companyd_regheading {
     width: 72%;
     font-size: 18px;
 }
-.company_reg button {
+.company_reg input[type="button"] {
     background-color: #ffb100;
     border: none;
     color: #fff;
@@ -919,6 +919,7 @@ h2.companyd_regheading {
     width: 27%;
     float: left;
 }
+
 .companyname .grid_b {
     width: 62%;
 }
@@ -962,7 +963,7 @@ textarea.grid_b {
     margin-left: 410px;
 }
 .projectLeft.company_reg .bottom .save {
-    padding: 26px 20px 27px 25px;
+    padding: 26px 20px 25px 25px;
     background-color: #ffb100;
     float: right;
 }
@@ -983,14 +984,14 @@ padding: 28px 19px 25px 26px;
 .faq .faqtextbox {
 width: 98%;
 }
-.faq button.faqbutton{
+.faq .faqbutton{
     width: 13%;
     float: right;
 }
 .projectLeft.company_reg .recentlyUploaded.faq {
 height: 300px;
 }
-.faq button.faqbutton.addnew{
+.faq .faqbutton.addnew{
     width: 13%;
     float: left;
     margin-top: 70px;

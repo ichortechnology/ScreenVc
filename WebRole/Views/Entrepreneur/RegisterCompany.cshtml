@@ -17,12 +17,13 @@
            </div>
            <div class="companylogo">
                <label class="grid_a">Company logo:</label>
-               <input type="file" style="display:none" >
-               <button class="grid_b" type="button">Upload</button>
+               <input type="file" id="uploadCompanyLogo" style="display:none" >
+               <input class="grid_b" onclick="getFile('uploadCompanyLogo');" type="button" value="Upload">
            </div>
            <div class="pitchvideo">
                <label class="grid_a">Pitch Video:</label>
-               <button class="grid_b" type="button">Upload</button>
+               <input type="file" id="uploadVideo" style="display:none">
+               <input class="grid_b" onclick="getFile('uploadCompanyLogo');" type="button" value="Upload">
                <span class="pitchor">or</span>
                @Html.TextBox("pitchvideo", null, new { @class = "pitchupload", placeholder = "insert url here..." })
            </div>
@@ -37,7 +38,7 @@
             <span>@Html.ActionLink("Edit", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)|</span>
             <span>@Html.ActionLink("Preview", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)|</span>
             <span>@Html.ActionLink("Unpublish", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</span>
-            <span class="save" style="margin-top: -3px;">@Html.ActionLink("Save", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</span>
+            <span class="save">@Html.ActionLink("Save", EntrepreneurActions.RegisterCompany, ControllerNames.Entrepreneur)</span>
         </div>
     </div>
 
@@ -50,7 +51,8 @@
             </div>
             <div class="financial_files">
                 <label class="grid_a">Files:</label>
-                <button class="grid_b" type="button">Upload</button>
+                <input type="file" id="uploadFinantialFiles" style="display:none">
+                <input class="grid_b" onclick="getFile('uploadFinantialFiles');" type="button" value="Upload">
             </div>
         </section>
 
@@ -73,7 +75,8 @@
             </div>
             <div class="background_files">
                 <label class="grid_a">Files:</label>
-                <button class="grid_b" type="button">Upload</button>
+                <input type="file" id="uploadBackgroundFiles" style="display:none">
+                <input class="grid_b" onclick="getFile('uploadBackgroundFiles');" type="button" value="Upload">
             </div>
         </section>
 
@@ -92,8 +95,8 @@
         <div class="sectionheading">F.A.Q.</div>
         @Html.TextBox("faqTextBox", null, new {@class="faqtextbox" })
         @Html.TextArea("faqDesc", null, new { @class = "faqtextbox" })
-        <button class="grid_b faqbutton" type="button">Save</button>
-        <button class="grid_b faqbutton addnew" type="button">Add new</button>
+        <input type="button" value="Save" class="grid_b faqbutton" />
+        <input type="button" value="Add new" class="grid_b faqbutton addnew" />
     </div>
     <div class="bottom last">
         <div>
@@ -105,3 +108,8 @@
     </div>
 </div>
 <br class="clear" />
+<script type="text/javascript">
+    function getFile(fileControl) {
+        document.getElementById(fileControl).click();
+    }
+</script>
