@@ -104,11 +104,13 @@ h5, h6 {
 }
 
 .mainBody {
-    background: url("../Images/bg.jpg") no-repeat 0 -60px;
     background-color: #efeeef;
     clear: both;
 }
-
+.indexMainDiv {
+    background: url("../Images/bg.jpg") no-repeat;
+    height: 550px;
+}
 .main-content {
     padding-left: 10px;
     padding-top: 30px;
@@ -953,17 +955,18 @@ textarea.grid_b {
 }
 .projectLeft.company_reg .recentlyUploaded.first {
     margin-top: 0;
+    height: 300px;
 }
 .projectLeft.company_reg .bottom {
     width: 100%;
     float: none;
-
+    overflow: hidden;
 }
 .projectLeft.company_reg .bottom div {
     margin-left: 410px;
 }
 .projectLeft.company_reg .bottom .save {
-    padding: 26px 20px 25px 25px;
+    padding: 26px 20px 27px 25px;
     background-color: #ffb100;
     float: right;
 }
@@ -995,4 +998,7 @@ height: 300px;
     width: 13%;
     float: left;
     margin-top: 70px;
+}
+.companydesc label.grid_a {
+clear: left;
 }

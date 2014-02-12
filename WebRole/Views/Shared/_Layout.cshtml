@@ -1,4 +1,6 @@
 ﻿@using Screen.Vc.Extensions;
+@using Screen.Vc.WebRole.Source;
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,7 +32,7 @@
                                 <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             -->
                             <li>@Html.ActionLink("Investors", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Entrepreneurs", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Entrepreneurs", "Index", ControllerNames.Entrepreneur)</li>
                             <!--
                             <li>@Html.ActionLink("About Us", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
@@ -41,7 +43,7 @@
                 <br class="clear" />
             </div>
             <div id="body" class="mainBody">
-                <section class="content-wrapper main-content clear-fix">
+                <section class="clear-fix">
                 @RenderBody()
                 </section>
             </div>
