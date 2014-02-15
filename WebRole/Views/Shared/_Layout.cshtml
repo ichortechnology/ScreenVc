@@ -3,61 +3,97 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Screen.Vc</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-       
-    </head>
-    <body>
-        <div id="top-header"></div>
-        <div class="page-container main-header">
-            <div id="notify-container" class="notify-container"></div>
-            @if (!Request.IsAuthenticated)
-            {
-                <div class="authentication-container"></div>
-            }
-            <div  class="content-wrapper header">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionImage("Index", "Home", "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
+<head>
+    <meta charset="utf-8" />
+    <title>Screen.Vc</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="top-header">
+        <div class="content-wrapper">
+            <div style="float: left; margin-top:20px;">
+                <label>Register</label>
+                <div class="register">
+
+                    @Html.TextBox("regusername", null, new { @class = "", placeholder = "Username" })
+                    @Html.TextBox("regpass", null, new { @class = "", placeholder = "Password" })
+
+                    <div>
+                        @Html.TextBox("regemail", null, new { @class = "", placeholder = "Email" })
+                        @Html.TextBox("regconfirmpass", null, new { @class = "", placeholder = "Confirm Password" })
+                    </div>
+
                 </div>
-                <div class="float-right ">
-                    <br />
-                    <nav>
-                        <ul id="menu">
-                            <!--
-                                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            -->
-                            <li>@Html.ActionLink("Investors", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Entrepreneurs", "Index", ControllerNames.Entrepreneur)</li>
-                            <!--
-                            <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                            -->
-                        </ul>
-                    </nav>
+                <div class="registerdiv">
+                    <input class="loginbtn" type="button" value=">">
                 </div>
-                <br class="clear" />
             </div>
-            <div id="body" class="mainBody">
-                <section class="clear-fix">
-                @RenderBody()
-                </section>
+            <div style="float: right; margin-top: 20px;">
+                <label>
+                    Login
+                    @Html.ActionLink("Forgot your password?", "", "", null, new { @class = "fgtpass" })
+                </label>
+                <div class="login">
+
+                    @Html.TextBox("logusername", null, new { @class = "", placeholder = "Email" })
+                    @Html.TextBox("logpass", null, new { @class = "", placeholder = "Password" })
+
+                </div>
+                <div class="logindiv">
+                    <input class="loginbtn" type="button" value=">">
+                </div>
             </div>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div>
-                    <p>&copy; @DateTime.Now.Year - Screen.Vc.</p>
-                </div>
+    </div>
+    <div id="top-border"></div>
+    <div class="page-container main-header">
+        <div id="notify-container" class="notify-container"></div>
+        @if (!Request.IsAuthenticated)
+        {
+            <div class="authentication-container"></div>
+        }
+        <div class="content-wrapper header">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionImage("Index", "Home", "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
             </div>
-        </footer>
+            <div class="float-right ">
+                <br />
+                <nav>
+                    <ul id="menu">
+                        <!--
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        -->
+                        <li>@Html.ActionLink("Investors", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Entrepreneurs", "Index", ControllerNames.Entrepreneur)</li>
+                        <!--
+                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                        -->
+                    </ul>
+                </nav>
+            </div>
+            <br class="clear" />
+        </div>
+        <div id="body" class="mainBody">
+            <section class="clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div>
+                <p>&copy; @DateTime.Now.Year - Screen.Vc.</p>
+            </div>
+        </div>
+    </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @*<script src="~/Scripts/layout.js"></script>*@
-        @RenderSection("scripts", required: false)
-    </body>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/layout.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
 </html>
