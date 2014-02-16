@@ -1,4 +1,5 @@
-﻿@using Screen.Vc.Extensions;
+﻿@model Screen.Vc.WebRole.Models.HomeModel
+@using Screen.Vc.Extensions;
 @using Screen.Vc.WebRole.Source;
 
 <!DOCTYPE html>
@@ -15,38 +16,8 @@
 <body>
     <div id="top-header">
         <div class="content-wrapper">
-            <div style="float: left; margin-top:20px;">
-                <label>Register</label>
-                <div class="register">
-
-                    @Html.TextBox("regusername", null, new { @class = "", placeholder = "Username" })
-                    @Html.TextBox("regpass", null, new { @class = "", placeholder = "Password" })
-
-                    <div>
-                        @Html.TextBox("regemail", null, new { @class = "", placeholder = "Email" })
-                        @Html.TextBox("regconfirmpass", null, new { @class = "", placeholder = "Confirm Password" })
-                    </div>
-
-                </div>
-                <div class="registerdiv">
-                    <input class="loginbtn" type="button" value=">">
-                </div>
-            </div>
-            <div style="float: right; margin-top: 20px;">
-                <label>
-                    Login
-                    @Html.ActionLink("Forgot your password?", "", "", null, new { @class = "fgtpass" })
-                </label>
-                <div class="login">
-
-                    @Html.TextBox("logusername", null, new { @class = "", placeholder = "Email" })
-                    @Html.TextBox("logpass", null, new { @class = "", placeholder = "Password" })
-
-                </div>
-                <div class="logindiv">
-                    <input class="loginbtn" type="button" value=">">
-                </div>
-            </div>
+            @{ Html.RenderPartial("~/Views/Shared/_RegisterUser.cshtml", Model.Register); }
+            @{ Html.RenderPartial("~/Views/Shared/_LoginUser.cshtml", Model.Login); }
         </div>
     </div>
     <div id="top-border"></div>
@@ -93,6 +64,9 @@
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    <script src="@Url.Content("~/Scripts/jquer.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"> </script>
     <script src="~/Scripts/layout.js"></script>
     @RenderSection("scripts", required: false)
 </body>

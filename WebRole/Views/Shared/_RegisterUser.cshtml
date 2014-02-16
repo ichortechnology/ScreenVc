@@ -1,0 +1,34 @@
+﻿@model Screen.Vc.WebRole.Models.RegisterModel
+@using Screen.Vc.WebRole.Source
+@using (Ajax.BeginForm("RegisterUser", "Home", new AjaxOptions
+            {
+                UpdateTargetId = "errMsg",
+                HttpMethod = "POST",
+                OnComplete = "return ValidateUser();"
+            }, new { id = "frmRegister" }))
+        {
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div style="float: left;">
+        <label>Register</label>
+        <div class="register">
+            @Html.TextBoxFor(model => model.UserName, new { @class = "regusername", placeholder = "Username" })
+            @Html.PasswordFor(model => model.Password, new { @class = "", placeholder = "Password" })
+            <div>
+                @Html.TextBoxFor(model => model.EmailAddress, new { @class = "regemail", placeholder = "Email" })
+                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "", placeholder = "Confirm Password" })
+            </div>
+        </div>
+        <div class="registerdiv">
+            <input class="loginbtn" type="submit" value=">">
+        </div>
+    </div>
+    <div id="errMsg"></div>
+        }
+<script>
+    function ValidateUser(data)
+    {
+        alert("fffff");
+    }
+</script>

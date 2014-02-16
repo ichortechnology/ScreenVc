@@ -1,0 +1,21 @@
+﻿@using Screen.Vc.WebRole.Source
+@model Screen.Vc.WebRole.Models.LoginModel
+
+@using (Html.BeginForm("Login", ControllerNames.Account))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div style="float: right;">
+        <label>
+            Login
+            @Html.ActionLink("Forgot your password?", "", "", null, new { @class = "fgtpass" })
+        </label>
+        <div class="login">
+            @Html.TextBoxFor(model => model.UserName, new { @class = "", placeholder = "Email" })
+            @Html.PasswordFor(model => model.Password, new { @class = "logpass", placeholder = "Password" })
+        </div>
+        <div class="logindiv">
+            <input class="loginbtn" type="button" value=">">
+        </div>
+    </div>
+}

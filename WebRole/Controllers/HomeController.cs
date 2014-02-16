@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Screen.Vc.WebRole.Models;
+using WebMatrix.WebData;
+using System.Web.Security;
+using Screen.Vc.WebRole.Filters;
 
 namespace Screen.Vc.WebRole.Controllers
 {
+    [InitializeSimpleMembership]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
-            return View();
+            var model = new HomeModel();
+            return View(model);
         }
 
         public ActionResult About()
@@ -22,5 +26,25 @@ namespace Screen.Vc.WebRole.Controllers
             return View();
         }
 
+        public ActionResult RegisterUser(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Attempt to register the user
+                try
+                {
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.Login(model.UserName, model.Password);
+                    return RedirectToAction("Index", "Entrpreneur");
+                }
+                catch (MembershipCreateUserException e)
+                {
+                    ModelState.AddModelError("error", "Sorry Some error occured.");
+                }
+            }
+
+            // If we got this far, something failed, redisplay form
+            return Json("true", JsonRequestBehavior.AllowGet);
+        }
     }
 }

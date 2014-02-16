@@ -18,12 +18,12 @@
            <div class="companylogo">
                <label class="grid_a">Company logo:</label>
                <input type="file" id="uploadCompanyLogo" style="display:none" >
-               <input class="grid_b" onclick="getFile('uploadCompanyLogo');" type="button" value="Upload">
+               <input class="grid_b upload-button" onclick="getFile('uploadCompanyLogo');" type="button" value="Upload">
            </div>
            <div class="pitchvideo">
                <label class="grid_a">Pitch Video:</label>
                <input type="file" id="uploadVideo" style="display:none">
-               <input class="grid_b" onclick="getFile('uploadCompanyLogo');" type="button" value="Upload">
+               <input class="grid_b upload-button" onclick="getFile('uploadCompanyLogo');" type="button" value="Upload">
                <span class="pitchor">or</span>
                @Html.TextBox("pitchvideo", null, new { @class = "pitchupload", placeholder = "insert url here..." })
            </div>
@@ -52,7 +52,7 @@
             <div class="financial_files">
                 <label class="grid_a">Files:</label>
                 <input type="file" id="uploadFinantialFiles" style="display:none">
-                <input class="grid_b" onclick="getFile('uploadFinantialFiles');" type="button" value="Upload">
+                <input class="grid_b upload-button" onclick="getFile('uploadFinantialFiles');" type="button" value="Upload">
             </div>
         </section>
 
@@ -76,7 +76,7 @@
             <div class="background_files">
                 <label class="grid_a">Files:</label>
                 <input type="file" id="uploadBackgroundFiles" style="display:none">
-                <input class="grid_b" onclick="getFile('uploadBackgroundFiles');" type="button" value="Upload">
+                <input class="grid_b upload-button" onclick="getFile('uploadBackgroundFiles');" type="button" value="Upload">
             </div>
         </section>
 

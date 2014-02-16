@@ -83,11 +83,11 @@ namespace Screen.Vc.WebRole.Models
 
     public class RegisterModel
     {
-        [Required]
+        [Required(ErrorMessage="User name is required.")]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="Password is required.")]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -98,8 +98,9 @@ namespace Screen.Vc.WebRole.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Email address is required.")]
         [Display(Name = "Email address")]
+        [EmailAddress(ErrorMessage="Invalid email address")]
         [DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
 
