@@ -16,8 +16,8 @@
     <div id="top-header">
         <div class="content-wrapper">
             @{
-            var registerModel = new RegisterModel();
-            var loginModel = new LoginModel();    
+                var registerModel = new RegisterModel();
+                var loginModel = new LoginModel();
             }
             @{ Html.RenderPartial("~/Views/Shared/_RegisterUser.cshtml", registerModel); }
             @{ Html.RenderPartial("~/Views/Shared/_LoginUser.cshtml", loginModel); }
@@ -26,10 +26,7 @@
     <div id="top-border"></div>
     <div class="page-container main-header">
         <div id="notify-container" class="notify-container"></div>
-        @if (!Request.IsAuthenticated)
-        {
-            <div class="authentication-container"></div>
-        }
+
         <div class="content-wrapper header">
             <div class="float-left">
                 <p class="site-title">@Html.ActionImage("Index", "Home", "~/Images/ScreenVcLogo.png", "LogoImage here")</p>
@@ -43,10 +40,12 @@
                         -->
                         <li>@Html.ActionLink("Investors", "Index", "Home")</li>
                         <li>@Html.ActionLink("Entrepreneurs", "Index", ControllerNames.Entrepreneur)</li>
-                        <!--
-                        <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                        -->
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li>
+                                @WebSecurity.CurrentUserName
+                            </li>
+                        }
                     </ul>
                 </nav>
             </div>

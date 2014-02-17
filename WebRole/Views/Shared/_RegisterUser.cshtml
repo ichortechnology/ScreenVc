@@ -1,11 +1,11 @@
 ﻿@model Screen.Vc.WebRole.Models.RegisterModel
 @using Screen.Vc.WebRole.Source
-@using (Ajax.BeginForm("RegisterUser", "Home", new AjaxOptions
+@using (Ajax.BeginForm("Register", "Account", new AjaxOptions
             {
                 UpdateTargetId = "errMsg",
                 HttpMethod = "POST",
                 OnComplete = "return ValidateUser();"
-            }, new { id = "frmRegister" }))
+            }))
         {
 
     @Html.AntiForgeryToken()
