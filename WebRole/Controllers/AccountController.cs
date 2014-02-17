@@ -21,6 +21,7 @@ namespace Screen.Vc.WebRole.Controllers
         //
         // Generic code that works for all logins.
         //
+        [AllowAnonymous]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))

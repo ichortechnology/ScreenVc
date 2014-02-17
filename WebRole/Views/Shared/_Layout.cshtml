@@ -1,7 +1,6 @@
-﻿@model Screen.Vc.WebRole.Models.HomeModel
-@using Screen.Vc.Extensions;
+﻿@using Screen.Vc.Extensions;
 @using Screen.Vc.WebRole.Source;
-
+@using Screen.Vc.WebRole.Models
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +15,12 @@
 <body>
     <div id="top-header">
         <div class="content-wrapper">
-            @{ Html.RenderPartial("~/Views/Shared/_RegisterUser.cshtml", Model.Register); }
-            @{ Html.RenderPartial("~/Views/Shared/_LoginUser.cshtml", Model.Login); }
+            @{
+            var registerModel = new RegisterModel();
+            var loginModel = new LoginModel();    
+            }
+            @{ Html.RenderPartial("~/Views/Shared/_RegisterUser.cshtml", registerModel); }
+            @{ Html.RenderPartial("~/Views/Shared/_LoginUser.cshtml", loginModel); }
         </div>
     </div>
     <div id="top-border"></div>

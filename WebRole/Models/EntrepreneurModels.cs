@@ -66,6 +66,8 @@ namespace Screen.Vc.WebRole.Models
 
     public class EntrepreneurHomePage
     {
+        public RegisterModel Register { get; set; }
+        public LoginModel Login { get; set; }
         public CompanySummary CompanySummary { get; set; }
         public UnreadQuestionsSummary UnreadQuestionsSummary { get; set; }
         public UnreadCommentsSummary UnreadCommentsSummary { get; set; }
