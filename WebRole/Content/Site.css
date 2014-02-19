@@ -21,11 +21,97 @@ a {
     text-decoration: underline;
 }
 
-
-#top-header {
-    border-top: 8px solid #000;
+#top-header{
+    background-color: #345572;
+    width: 100%;
+    height: auto;
     display: block;
+    color: #90b4d3;
+    content: "";
+    overflow: hidden;
+    padding: 20px 0px;
 }
+#top-header .validation-summary-errors
+{
+    color: #e80c4d;
+    font-weight: normal;
+    font-size: 12px;
+}
+#top-border {
+    display: block;
+    background-image: url("../Images/up_arrow.png");
+    background-size: 100% 100%;
+    height: 30px;
+    width: 30px;
+    margin-left: 49%;
+}
+#top-border.uparrow {
+     background-image: url("../Images/down_arrow.png");
+}
+#top-header .register {
+float: left;
+/*margin-top: 35px;*/
+}
+#top-header .login {
+float: left;
+/*margin-top: 35px;*/
+}
+#top-header .logpass {
+display: block;
+}
+.regusername,
+.regemail{
+    margin-right: 10px;
+}
+#top-header input {
+width: 200px;
+background-color: #436786;
+color: #90b4d3;
+border: none;
+font-size: 12px;
+}
+#top-header label {
+    font-weight:normal;
+    font-size: 18px;
+    margin-bottom: 2px;
+    position: relative;
+}
+#top-header label a{
+    font-size: 12px;
+    color: #90b4d3;
+    text-decoration: none;
+    float:right;
+    padding-top: 5px;
+}
+#top-header input::-webkit-input-placeholder
+{
+    color: #90b4d3;
+}
+#top-header input:-moz-placeholder
+{
+    color: #90b4d3;
+}
+#top-header input::-moz-placeholder
+{
+    color: #90b4d3;
+}
+#top-header input:-ms-input-placeholder
+{
+    color: #90b4d3;
+}
+#top-header .loginbtn
+{
+    height: 61px;
+    width: 60px;
+    float: left;
+    background-color: #ffb100;
+    font-size: 20px;
+}
+#top-header .registerdiv,
+#top-header .logindiv.logindiv{
+    float: left;
+}
+
 
 header, footer, hgroup,
 nav, section {
@@ -382,7 +468,7 @@ button {
     background-color: #d3dce0;
     border: 1px solid #787878;
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 600;
     padding: 7px;
     margin-right: 8px;
@@ -922,6 +1008,10 @@ h2.companyd_regheading {
     float: left;
 }
 
+.grid_b .upload-button {
+    font-size: 12px;
+    font-weight: normal;
+}
 .companyname .grid_b {
     width: 62%;
 }

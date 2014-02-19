@@ -1,10 +1,12 @@
 ﻿$(function () {
     $(function () {
-        $('#top-header').mouseenter(function () {
-            $('.header').slideDown('slow');
+        $('#top-border').mouseenter(function () {
+            $('#top-header').slideDown('slow');
+            $('#top-border').removeClass('uparrow');
         });
         $('#body').mouseenter(function () {
-            $('.header').slideUp('slow');
+            $('#top-header').slideUp('slow');
+            $('#top-border').addClass('uparrow');
         });
     });
 });

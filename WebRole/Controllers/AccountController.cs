@@ -21,6 +21,7 @@ namespace Screen.Vc.WebRole.Controllers
         //
         // Generic code that works for all logins.
         //
+        [AllowAnonymous]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
@@ -138,7 +139,8 @@ namespace Screen.Vc.WebRole.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    var userInfo = new { UserName = model.UserName, EmailAddress = model.EmailAddress, FirstName = model.UserName };
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, userInfo);
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

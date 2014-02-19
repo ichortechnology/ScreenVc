@@ -17,6 +17,7 @@ namespace Screen.Vc.WebRole.Source
         public const string Investor = "Investor";
         public const string Worker = "Worker";
         public const string Company = "Company";
+        public const string Account = "Account";
     }
 
     public class Actions
@@ -28,6 +29,7 @@ namespace Screen.Vc.WebRole.Source
 
     public class EntrepreneurActions
     {
+        public const string EntrepreneurRegister = "EntrepreneurRegister";
         public const string NoCompanies = "NoCompanies";
         public const string RegisterCompany = "RegisterCompany";
         public static string BrowseProjects = "BrowseProjects";
