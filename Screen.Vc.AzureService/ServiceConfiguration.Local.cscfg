@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Screen.Vc.AzureService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+    <Role name="Screen.Vc.WebRole">
+        <Instances count="1" />
+        <ConfigurationSettings>
+            <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+            <Setting name="RetryCount" value="3" />
+            <Setting name="SqlConnectionString" value="Data Source=evyg952p4x.database.windows.net;Initial Catalog=ScreenVc;Integrated Security=True;" />
+            <Setting name="SqlConnectMinBackOffInSeconds" value="3" />
+            <Setting name="SqlConnectMaxBackOffInSeconds" value="30" />
+            <Setting name="SqlConnectDeltaBackOffInSeconds" value="3" />
+            <Setting name="SqlConnectTimeoutInSeconds" value="20" />
+            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="screenvctest" />
+            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEBOuAWwXvbufTcfb0PRCZCYwDQYJKoZIhvcNAQEBBQAEggEAFTZAgOVXqvXLb7smr0fVm96il6GbDWkhTIFSXTso7hfQoqDxx1mai4TblHYewRRVmIEbfS/5/QMOj1lywzfYPZcoy8K4TX/z9jmrwgInPwdTZqL8R0QOZmD9SvE7N2X0S6ui92oi9JEfSNM4x8jBxaAP4SEZLK/0C7ENGxu9If+md/HLAZ/rouL/O2mDin9o474eLXA3bJF06/xRx0X9PY2AKVxZ4ThZPONAjGvQ5KMU2PVe/+Aw84GtblMLjl3TW5gYbCIsXYAdSQgQgMRIpOZqr7JDETZcntkUvPRu4PKmwX1XtP4GWMYRF7fh8biScvF1kHMFxbCzek67j0Fi0DAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECMn83hoHQK6ygBC2ZxKueLm6aBU0deCSHmeD" />
+            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2015-02-09T23:59:59.0000000-08:00" />
+            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+        </ConfigurationSettings>
+        <Certificates>
+            <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="98ECB113A7EC03C253A2EBA5DB73B9036C2EC655" thumbprintAlgorithm="sha1" />
+        </Certificates>
+    </Role>
+</ServiceConfiguration>
