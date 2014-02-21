@@ -82,56 +82,27 @@ namespace LoadInvestorIndustries
         {
             var idLists = paramParser.ParseIntRange(startId, endId);
 
-            List<IAsyncResult> results = new List<IAsyncResult>();
-
             foreach (List<int> idList in idLists)
             {
                 try
                 {
-                    var investorsQuery = new GetInvestorsQuery(idList, new AsyncCallback(ProcessLoadInvestorsAndLoadUsersMarkets), AngelListClient, defaultLogWriter);
-
-                    var result = investorsQuery.BeginExecute();
-                    results.Add(result);
+                    var investorsQuery = new GetInvestorsQuery(idList, AngelListClient, defaultLogWriter);
+                    List<User> result = (List<User>)investorsQuery.Execute();
+                    ProcessLoadInvestorsAndLoadUsersMarkets(result);
                 }
                 catch (AngelListClientException ex)
                 {
                     var entry = new LogEntry();
                     entry.Categories = new string[] { "General", "Warning" };
-                    entry.Message = string.Format("An exception occurred when calling the service. No further ids will be processed. Id list: {0}. Exception: {1}", String.Join(",", idLists), ex);
+                    entry.Message = string.Format("An exception occurred when calling the service. No further ids will be processed. Id list: {0}. Exception: {1}.", String.Join(",", idList), ex);
                     entry.Severity = TraceEventType.Error;
                     defaultLogWriter.Write(entry);
-                    break;
                 }
             }
-
-
-
-            if (results.Count > 0)
-            {
-                WaitHandle[] handles = results.Select(b => b.AsyncWaitHandle).ToArray();
-
-                foreach (var handle in handles)
-                {
-                    if (!handle.WaitOne(60 * 1000))
-                    {
-                        var entry = new LogEntry();
-                        entry.Categories = new string[] { "General", "Warning" };
-                        entry.Message = "A GetInvestors batch timed out.";
-                        entry.Severity = TraceEventType.Error;
-                        defaultLogWriter.Write(entry);
-                    }
-                }
-
-
-            }
-
         }
 
-        public void ProcessLoadInvestorsAndLoadUsersMarkets(IAsyncResult iaResult)
+        public void ProcessLoadInvestorsAndLoadUsersMarkets(List<User> investors)
         {
-            var aresult = (BatchAsyncResult<List<User>>)iaResult;
-            List<User> investors = aresult.Result;
-
             // Save investors.
             var upsertInvestor = new UpsertInvestor(investors, configurationProvider);
             upsertInvestor.Execute();
@@ -156,8 +127,7 @@ namespace LoadInvestorIndustries
                 defaultLogWriter.Write(entry);
             }
 
-            // Signal that processing of the IAsyncResult is completed.
-            aresult.SignalCompleted();
+            
 
 
         }
@@ -177,38 +147,21 @@ namespace LoadInvestorIndustries
                 }
             }
 
-            // Get markets for this batch of users.
-            var startupsMarketsCallback = new AsyncCallback(ProcessStartupsMarketsQuery);
-
-            GetStartupsMarketsQuery startupsMarketsQuery = new GetStartupsMarketsQuery(uniqueStartupIds.ToList(), userIdStartupIdsDict, startupsMarketsCallback, AngelListClient, defaultLogWriter);
-
-            IAsyncResult result = startupsMarketsQuery.BeginExecute();
-
-
-            if (!result.AsyncWaitHandle.WaitOne(60 * 1000))
-            {
-                var entry = new LogEntry();
-                entry.Categories = new string[] { "General", "Warning" };
-                entry.Message = "A GetUsersMarkets GetStartupsMarketsQuery batch timed out.";
-                entry.Severity = TraceEventType.Error;
-                defaultLogWriter.Write(entry);
-            }
+            GetStartupsMarketsQuery startupsMarketsQuery = new GetStartupsMarketsQuery(uniqueStartupIds.ToList(), userIdStartupIdsDict, AngelListClient, defaultLogWriter);
+            Dictionary<int, List<Market>> result = (Dictionary<int, List<Market>>)startupsMarketsQuery.Execute();
+            ProcessStartupsMarketsQuery(result, userIdStartupIdsDict);
         }
 
-        public void ProcessStartupsMarketsQuery(IAsyncResult iaResult)
+        public void ProcessStartupsMarketsQuery(Dictionary<int, List<Market>> startupIdsMarkets, Dictionary<int, List<int>> userIdStartupIds)
         {
-            var aresult = (BatchAsyncResult<Dictionary<int, List<Market>>>)iaResult;
-            Dictionary<int, List<Market>> startupIdsMarkets = aresult.Result;
             // Note:  Result received might not contain all the markets of any given user.
-
             // AsyncState has the original list of user ids we want markets for.
-            var userIdStartupIds = aresult.AsyncState as Dictionary<int, List<int>>;
-
+            
             if (userIdStartupIds == null)
             {
                 var entry = new LogEntry();
                 entry.Categories = new string[] { "General", "Warning" };
-                entry.Message = "ProcessStartupsMarketsQuery AsyncState was null or of the wrong type.";
+                entry.Message = "ProcessStartupsMarketsQuery was null or of the wrong type.";
                 entry.Severity = TraceEventType.Error;
                 defaultLogWriter.Write(entry);
             }
@@ -275,9 +228,6 @@ namespace LoadInvestorIndustries
             // Save the user => markets relationship to db.
             var upsertInvestorIndustry = new UpsertInvestorIndustry(userIdMarketId, configurationProvider);
             upsertInvestorIndustry.Execute();
-
-            // Signal that processing of the IAsyncResult is completed.
-            aresult.SignalCompleted();
 
         }
     }

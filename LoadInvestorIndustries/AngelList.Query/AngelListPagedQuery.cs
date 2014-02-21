@@ -19,7 +19,6 @@ namespace AngelList.Query
     {
         protected delegate void ExecuteInvoker();
         protected IAsyncResult ExecuteInvokerAsyncResult;
-        protected AsyncCallback batchCallback;
         protected List<BatchAsyncResult<TReturnType>> batchResults = new List<BatchAsyncResult<TReturnType>>();
         protected object State { get; set; }
         protected LogWriter defaultLogWriter;
@@ -39,12 +38,12 @@ namespace AngelList.Query
 
         protected IAngelListClient AngelListClient { get; private set; }
 
-        public AngelListPagedQuery(AsyncCallback batchCallback, IAngelListClient angelListClient, LogWriter logWriter)
-            : this(null, batchCallback, angelListClient, logWriter)
+        public AngelListPagedQuery(IAngelListClient angelListClient, LogWriter logWriter)
+            : this(null, angelListClient, logWriter)
         {
         }
 
-        public AngelListPagedQuery(object state, AsyncCallback batchCallback, IAngelListClient angelListClient, LogWriter logWriter)
+        public AngelListPagedQuery(object state, IAngelListClient angelListClient, LogWriter logWriter)
         {
             if (logWriter == null)
             {
@@ -56,14 +55,8 @@ namespace AngelList.Query
                 throw new ArgumentNullException("angelListClient");
             }
 
-            if (batchCallback == null)
-            {
-                throw new ArgumentNullException("batchCallback");
-            }
-
             this.defaultLogWriter = logWriter;
             this.AngelListClient = angelListClient;
-            this.batchCallback = batchCallback;
             this.State = state;
         }
 
@@ -104,7 +97,7 @@ namespace AngelList.Query
         /// <summary>
         /// Method that implementations override to perform a query. Results of the query should be given as a parameter to the method CallBatchCallback.
         /// </summary>
-        abstract protected void Execute();
+        abstract public Object Execute();
 
         /// <summary>
         /// Used by implementations to return the results of the query. Sends the results to the AsyncCallback that processes the results
@@ -115,7 +108,6 @@ namespace AngelList.Query
         {
             var result = new BatchAsyncResult<TReturnType>(batch, this.State);
             batchResults.Add(result);
-            batchCallback(result);
         }
     }
 }
