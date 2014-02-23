@@ -22,8 +22,9 @@ namespace AngelList.Query
             this.Id = id;
         }
 
-        protected override void Execute()
+        public override Object Execute()
         {
+            List<UserStartupRoles> userStartUpRoles = new List<UserStartupRoles>();
             int page = 0;
             int lastPage = int.MaxValue;
 
@@ -36,12 +37,14 @@ namespace AngelList.Query
                     response.StartupRoles = new StartupRole[0];
                 }
                 
-                CallBatchCallback(new UserStartupRoles(Id, response.StartupRoles.ToList()));
+                userStartUpRoles.Add(new UserStartupRoles(Id, response.StartupRoles.ToList()));
 
                 page = response.Page;
                 lastPage = response.LastPage;
             }
             while (page++ < lastPage);
+
+            return userStartUpRoles;
         }
     }
 }

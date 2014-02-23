@@ -19,8 +19,8 @@ namespace AngelList.Query
     {
         public List<int> Ids { get; protected set; }
 
-        public GetUsersBatchQuery(List<int> ids, AsyncCallback batchCallback,  IAngelListClient angelListClient, LogWriter logWriter)
-            : base(batchCallback, angelListClient, logWriter)
+        public GetUsersBatchQuery(List<int> ids,  IAngelListClient angelListClient, LogWriter logWriter)
+            : base(angelListClient, logWriter)
         {
             if (ids == null)
             {
@@ -30,13 +30,14 @@ namespace AngelList.Query
             this.Ids = ids;
         }
 
-        protected override void Execute()
+        public override Object Execute()
         {
             if (Ids == null)
             {
                 throw new InvalidOperationException("Ids cannot be null.");
             }
 
+            List<User> batch = new List<User>();
             // Query in a loop to respect AngelListClient.QueryParameterLimit.
 
             for (int queryStartIndex = 0; queryStartIndex <= Ids.Count; queryStartIndex += AngelListClient.QueryParameterLimit)
@@ -47,13 +48,7 @@ namespace AngelList.Query
 
                 try
                 {
-                    List<User> batch = AngelListClient.UsersBatch(ids);
-
-                    if (batch == null)
-                    {
-                        batch = new List<User>();
-                    }
-                    CallBatchCallback(batch);
+                    batch.AddRange(AngelListClient.UsersBatch(ids));
                 }
                 catch (AngelListClientException ex)
                 {
@@ -62,11 +57,10 @@ namespace AngelList.Query
                     entry.Message = string.Format("An exception occurred when calling the service. No further ids will be processed. Id list: {0}. Exception: {1}", String.Join(",", ids), ex);
                     entry.Severity = TraceEventType.Error;
                     defaultLogWriter.Write(entry);
-
-                    break;
                 }
             }
 
+            return batch;
         }
     }
 }

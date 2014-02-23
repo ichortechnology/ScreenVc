@@ -19,31 +19,26 @@ namespace AngelList.Query.Investor
     {
         List<int> Ids { get; set; }
 
-        public GetInvestorsQuery(List<int> ids, AsyncCallback batchCallback, IAngelListClient angelListClient, LogWriter logWriter)
-            : base(batchCallback, angelListClient, logWriter)
+        public GetInvestorsQuery(List<int> ids, IAngelListClient angelListClient, LogWriter logWriter)
+            : base(angelListClient, logWriter)
         {
             this.Ids = ids;
         }
 
-        protected override void Execute()
+        public override Object Execute()
         {
-            var usersBatch = new GetUsersBatchQuery(Ids, new AsyncCallback(this.ProcessUsersBatchResult), AngelListClient, defaultLogWriter);
-            AsyncResult result = (AsyncResult)usersBatch.BeginExecute();
-            result.AsyncWaitHandle.WaitOne();
+            List<User> results = AngelListClient.UsersBatch(Ids);
+            return ProcessUsersBatchResult(results);
         }
 
-        public void ProcessUsersBatchResult(IAsyncResult iaResult)
+        public List<User> ProcessUsersBatchResult(List<User> users)
         {
-            BatchAsyncResult<List<User>> aresult = (BatchAsyncResult<List<User>>)iaResult;
-            List<User> users = aresult.Result;
-
             if (users != null)
             {
                 var investors = users.Where<User>(u => u.Investor == true);
-                CallBatchCallback(new List<User>(investors.ToList()));
+                return investors.ToList();
             }
-            // Signal that processing of the IAsyncResult is completed.
-            aresult.SignalCompleted();
+            return new List<User>();
         }
     }
 }

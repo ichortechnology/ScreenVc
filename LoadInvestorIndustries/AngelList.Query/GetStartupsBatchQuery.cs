@@ -17,8 +17,8 @@ namespace AngelList.Query
     {
         public List<int> Ids { get; protected set; }
 
-        public GetStartupsBatchQuery(List<int> ids, AsyncCallback batchCallback, IAngelListClient angelListClient, LogWriter logWriter)
-            : base(batchCallback, angelListClient, logWriter)
+        public GetStartupsBatchQuery(List<int> ids, IAngelListClient angelListClient, LogWriter logWriter)
+            : base( angelListClient, logWriter)
         {
             if (ids == null)
             {
@@ -28,7 +28,7 @@ namespace AngelList.Query
             this.Ids = ids;
         }
 
-        protected override void Execute()
+        public override Object Execute()
         {
             if (Ids == null)
             {
@@ -36,6 +36,7 @@ namespace AngelList.Query
             }
 
             List<int> batchIds = new List<int>();
+            List<Startup> startupList = new List<Startup>();
             List<AngelList.JsonTypes.Startup> batch;
 
             // Query in a loop to respect AngelListClient.QueryParameterLimit.
@@ -50,8 +51,10 @@ namespace AngelList.Query
                     batch = new List<AngelList.JsonTypes.Startup>();
                 }
 
-                CallBatchCallback(batch);
+                startupList.AddRange(batch);
             }
+
+            return startupList;
         }
     }
 

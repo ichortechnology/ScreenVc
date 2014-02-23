@@ -20,32 +20,26 @@ namespace AngelList.Query.Investor
     {
         public List<int> Ids { get; set; }
 
-        public GetStartupsMarketsQuery(List<int> startupIds, AsyncCallback batchCallback, IAngelListClient angelListClient, LogWriter logWriter)
-            : this(startupIds, null, batchCallback, angelListClient, logWriter)
+        public GetStartupsMarketsQuery(List<int> startupIds, IAngelListClient angelListClient, LogWriter logWriter)
+            : this(startupIds, null, angelListClient, logWriter)
         {
         }
 
-        public GetStartupsMarketsQuery(List<int> startupIds, object state, AsyncCallback batchCallback, IAngelListClient angelListClient, LogWriter logWriter)
-            : base(state, batchCallback, angelListClient, logWriter)
+        public GetStartupsMarketsQuery(List<int> startupIds, object state, IAngelListClient angelListClient, LogWriter logWriter)
+            : base(state, angelListClient, logWriter)
         {
             this.Ids = startupIds;
         }
 
-        protected override void Execute()
+        public override Object Execute()
         {
-            var startupsBatchCallback = new AsyncCallback(ProcessStartupsBatchQuery);
-
-            var startupsBatchQuery = new GetStartupsBatchQuery(Ids, startupsBatchCallback, AngelListClient, defaultLogWriter);
-
-            var result = startupsBatchQuery.BeginExecute();
-            result.AsyncWaitHandle.WaitOne();
+            var startupsBatchQuery = new GetStartupsBatchQuery(Ids, AngelListClient, defaultLogWriter);
+            List<Startup> results = (List<Startup>)startupsBatchQuery.Execute();
+            return ProcessStartupsBatchQuery(results);
         }
 
-        public void ProcessStartupsBatchQuery(IAsyncResult iaResult)
+        public Dictionary<int, List<Market>> ProcessStartupsBatchQuery(List<Startup> startups)
         {
-            var aresult = (BatchAsyncResult<List<AngelList.JsonTypes.Startup>>)iaResult;
-            List<AngelList.JsonTypes.Startup> startups = aresult.Result;
-
             var startupIdsMarkets = new Dictionary<int, List<Market>>();
 
             foreach (var startup in startups)
@@ -53,10 +47,7 @@ namespace AngelList.Query.Investor
                 startupIdsMarkets.Add(startup.Id, startup.Markets.ToList());
             }
 
-            CallBatchCallback(startupIdsMarkets);
-
-            // Signal that processing of the IAsyncResult is completed.
-            aresult.SignalCompleted();
+            return startupIdsMarkets;
         }
     }
 }
