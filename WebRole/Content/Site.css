@@ -185,6 +185,13 @@ h5, h6 {
     max-width: 960px;
 }
 
+.status-message
+{
+    margin: 0 auto;
+    background-color: #ffb100;
+    text-align: center;
+}
+
 #body {
     background-color: #ebebeb;
 }
